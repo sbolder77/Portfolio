@@ -1,0 +1,20 @@
+h1 {
+  color: #000000;
+  font-family: "Roboto Slab", serif;
+  font-size: 30pt;
+  font-weight: 700;
+  line-height: 0; }
+  
+h2 {
+  color: #A5aeb1;
+  font-family: "Open Sans", sans-serif;
+  font-size: 30pt;
+  font-weight: 500;
+  line-height: 0.5; }
+  
+p {
+  color: #8bb4c1;
+  font-family: "Arial", serif;
+  font-weight: 300;
+  line-height: 0;
+  font-size: 2em; }
