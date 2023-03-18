@@ -33,7 +33,6 @@ def get_max(my_nums):
     else:
         return max(my_nums[0], get_max(my_nums[1:]))
 
-
 def main():
     print("The result of the recursive_sum function is -", str(recursive_sum(5)))
     print("The result of the list_sum function is -", str(list_sum([10, 12.5, 10, 7])))
