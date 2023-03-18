@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>eecccaf9-75e8-460b-9d18-523c77acd266</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CodioExercises\RecursionExercises.py</StartupFile>
+    <StartupFile>Exercises\CalculateAge.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
