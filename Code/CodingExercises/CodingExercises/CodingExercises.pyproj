@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>eecccaf9-75e8-460b-9d18-523c77acd266</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Exercises\CalculateAge.py</StartupFile>
+    <StartupFile>CodioExercises\PolymorphismLab.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,6 +27,8 @@
     <Compile Include="CodioExercises\ClassFunctionsAndMethods.py" />
     <Compile Include="CodioExercises\Encapsulation.py" />
     <Compile Include="CodioExercises\Inheritance.py" />
+    <Compile Include="CodioExercises\PolymorphismExercises.py" />
+    <Compile Include="CodioExercises\PolymorphismLab.py" />
     <Compile Include="CodioExercises\RecursionExercises.py" />
     <Compile Include="CodioExercises\RecursionLab1.py" />
     <Compile Include="CodioExercises\RecursionLab2HilbertCurve.py" />
@@ -40,6 +42,10 @@
   <ItemGroup>
     <Folder Include="CodioExercises\" />
     <Folder Include="Exercises\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodioExercises\answer_exercise5.txt" />
+    <Content Include="CodioExercises\text_1_exercise5.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
