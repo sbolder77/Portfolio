@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DriverlessCar", "DriverlessCar.pyproj", "{C692E1F0-5C2C-4E14-BC8C-BE9B4CC695AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C692E1F0-5C2C-4E14-BC8C-BE9B4CC695AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C692E1F0-5C2C-4E14-BC8C-BE9B4CC695AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {492052ED-D880-475E-AF85-73F5995342CB}
+	EndGlobalSection
+EndGlobal
