@@ -1,56 +1,57 @@
-from datetime import date, datetime
+'''module to represent journey details and calculations on elapsed time, distance etc.'''
+from datetime import datetime
 
-#region Constants
-START_TIME = datetime
-CHARGE = bool
+#region constants
 JOURNEY_DETAILS = {
     "start": "Start Avenue, Startington, ST1 2RT",
-    "finish": "Finish Lane, Finishster, FI3 4SH"
+    "finish": "Finish Lane, Finishster, FI3 4SH",
+    "distance": 20.0
 }
-TOTAL_JOURNEY_DISTANCE = 60
 #endregion
 
 #region class
 class JourneyDetails:
-    ''''''
+    '''class with function to return and calculate values'''
     def __init__(self):
-        self.startTime = datetime.now()
+        '''class to represent the details of a journey'''
+        self.start_time = datetime.now()
         self.charge = False
-        self.start_address = JOURNEY_DETAILS["start"]
-        self.finish_address = JOURNEY_DETAILS["finish"]
-        self.total_distance = TOTAL_JOURNEY_DISTANCE
-    
-    def setStartTime(self):
-        START_TIME = self.startTime
-        return str(START_TIME)
+        self.elapsed_mins = 0
+        self.miles_covered = 0
 
-    def getChargeStatus(self):
-        CHARGE = self.charge
-        if CHARGE == False:
-            return False
+    def get_start_time(self):
+        '''returns the start time'''
+        return self.start_time
 
-    def setChargeStatus(self, charge):
-        if charge == 'Y':
-            CHARGE == True
-            return CHARGE
+    def get_start_address(self):
+        '''returns the start address'''
+        return JOURNEY_DETAILS["start"]
 
-        #else:
-            #return 'The car is charged'
+    def get_finish_address(self):
+        '''returns the start address'''
+        return JOURNEY_DETAILS["finish"]
 
-    #def setDistanceRemain(self):
+    def get_distance(self):
+        '''returns the journey distance'''
+        return JOURNEY_DETAILS["distance"]
 
+    def set_elapsed_minutes(self, minstoadd):
+        '''updates journey elapsed minutes'''
+        self.elapsed_mins = self.elapsed_mins + minstoadd
 
-    #def getDistanceRemain(self):
+    def get_elapsed_minutes(self):
+        '''returns the elapsed minutes'''
+        return self.elapsed_mins
 
+    def get_miles_covered(self):
+        '''returns the miles covered'''
+        return self.miles_covered
 
-    #def updateDistance(self):
+    def set_miles_covered(self, speed, time):
+        '''sets the miles covered'''
+        self.miles_covered = round(self.miles_covered + ((speed / 60) * time),1)
 
-
-    #def getElapsedTime(self):
-
-
-
+    def get_res_miles(self):
+        '''returns a calculated number of the total journey miles'''
+        return JOURNEY_DETAILS["distance"] / 4
 #endregion
-
-
-

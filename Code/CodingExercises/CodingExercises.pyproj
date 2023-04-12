@@ -25,22 +25,14 @@
     <Compile Include="CodingExercises.py" />
     <Compile Include="Exercises\ClassesAndObjects.py" />
     <Compile Include="Exercises\ClassFunctionsAndMethods.py" />
-    <Compile Include="Exercises\Encapsulation.py" />
     <Compile Include="Exercises\Inheritance.py" />
-    <Compile Include="CodioExercises\PolymorphismExercises.py" />
     <Compile Include="Exercises\PolymorphismExercise.py" />
-    <Compile Include="CodioExercises\RecursionExercises.py" />
     <Compile Include="Exercises\RecursionExercise.py" />
-    <Compile Include="CodioExercises\RecursionLab2HilbertCurve.py" />
-    <Compile Include="CodioExercises\RecursionLab2Tree.py" />
-    <Compile Include="CodioExercises\RecursionLab2Triangle.py" />
     <Compile Include="Exercises\Variables.py" />
     <Compile Include="Exercises\Polymorphism.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CodioExercises\" />
     <Folder Include="Exercises\" />
-    <Folder Include="Exercises\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Exercises\answer_exercise5.txt" />

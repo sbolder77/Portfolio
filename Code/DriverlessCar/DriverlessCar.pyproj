@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c692e1f0-5c2c-4e14-bc8c-be9b4cc695ad</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>DriverlessCar.py</StartupFile>
+    <StartupFile>driverless_car.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,13 +21,30 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DriverlessCar.py" />
+    <Compile Include="driverless_car.py" />
     <Compile Include="drive.py" />
     <Compile Include="journey.py" />
     <Compile Include="sensor.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\activitydiagram.JPG" />
+    <Content Include="Images\chargebattery.JPG" />
+    <Content Include="Images\chargebatteryok.JPG" />
+    <Content Include="Images\classdiagram.JPG" />
+    <Content Include="Images\finish.JPG" />
+    <Content Include="Images\firstalert.jpg" />
+    <Content Include="Images\firstrun.JPG" />
+    <Content Include="Images\firstrunform.JPG" />
+    <Content Include="Images\ready.JPG" />
+    <Content Include="Images\secondalert.JPG" />
+    <Content Include="Images\sequencediagram.JPG" />
+    <Content Include="Images\started.JPG" />
+    <Content Include="Images\statediagram.JPG" />
+    <Content Include="Images\usecasediagram.JPG" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
