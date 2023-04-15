@@ -1,0 +1,11 @@
+{
+	"Source_Dir": [
+		{ "Name": "Source" }
+	],
+	"Target_Dir": [
+		{ "Name": "Target" }
+	],
+	"Log_Dir": [
+		{ "Name": "Log" }
+	]
+}

@@ -3,8 +3,8 @@ import statistics
 
 #region variables
 '''Source file and answer file variables should be updated for your path in your local source'''
-source_file = "C:\\Users\\simon.bolder\OneDrive - Thermo Fisher Scientific\\Documents\\University of Essex\\Portfolio\\Code\\CodingExercises\\Exercises\\text_1_exercise5.txt"
-answer_file = "C:\\Users\\simon.bolder\OneDrive - Thermo Fisher Scientific\\Documents\\University of Essex\\Portfolio\\Code\\CodingExercises\\Exercises\\answer_exercise5.txt"
+source_file = "\\text_1_exercise5.txt" '''Enter full path details'''
+answer_file = "\\answer_exercise5.txt" '''Enter full path details'''
 sample_phrases1 = ['cat in the hat', 'green eggs and ham', 'the lorax']
 sample_phrases2 = ['the taming of the shrew', 'hamlet', 'othello']
 #endregion

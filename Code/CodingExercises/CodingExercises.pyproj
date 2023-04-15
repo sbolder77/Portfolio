@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>eecccaf9-75e8-460b-9d18-523c77acd266</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Exercises\Inheritance.py</StartupFile>
+    <StartupFile>Inheritance.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,21 +22,17 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CodingExercises.py" />
-    <Compile Include="Exercises\ClassesAndObjects.py" />
-    <Compile Include="Exercises\ClassFunctionsAndMethods.py" />
-    <Compile Include="Exercises\Inheritance.py" />
-    <Compile Include="Exercises\PolymorphismExercise.py" />
-    <Compile Include="Exercises\RecursionExercise.py" />
-    <Compile Include="Exercises\Variables.py" />
-    <Compile Include="Exercises\Polymorphism.py" />
+    <Compile Include="ClassesAndObjects.py" />
+    <Compile Include="ClassFunctionsAndMethods.py" />
+    <Compile Include="Inheritance.py" />
+    <Compile Include="PolymorphismExercise.py" />
+    <Compile Include="RecursionExercise.py" />
+    <Compile Include="Variables.py" />
+    <Compile Include="Polymorphism.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Exercises\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Exercises\answer_exercise5.txt" />
-    <Content Include="Exercises\text_1_exercise5.txt" />
+    <Content Include="answer_exercise5.txt" />
+    <Content Include="text_1_exercise5.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
