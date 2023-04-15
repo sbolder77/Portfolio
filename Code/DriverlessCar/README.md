@@ -22,43 +22,43 @@ The application will run first time with only control available to charge the ba
 
 a. Click the 'Charge Battery' button.
 
-![image info](./images/chargebattery.jpg)
+![chargebattery](https://user-images.githubusercontent.com/114185236/232225504-5b74cfd8-4149-486f-908d-a35a7e531d9f.JPG)
 
 Fig 1. First run
 
 b. Click ok on the prompt that appears.
 
-![image info](./images/chargebatteryok.jpg)
+![chargebatteryok](https://user-images.githubusercontent.com/114185236/232225537-27e98626-d42b-4201-9ff3-2e6c79d14171.JPG)
 
 Fig 2. Charge battery
 
 c. Form loads with default data.
 
-![image info](./images/ready.jpg)
+![ready](https://user-images.githubusercontent.com/114185236/232225547-dccd4f6a-bff6-49d9-ad18-d6081d856395.JPG)
 
 Fig 3. Initial load of data
 
 d. Click the 'Start Journey' button.
 
-![image info](./images/started.jpg)
+![started](https://user-images.githubusercontent.com/114185236/232225563-c504cca4-3bf4-4d3d-8d46-370601e119ca.JPG)
 
 Fig 4. Started
 
 e. First alert is raised - you should be classed as being in a residential area. The prompt only appears if it is a red traffic light. Click ok on the prompt and the form will be updated.
 
-![image info](./images/firstalert.jpg)
+![firstalert](https://user-images.githubusercontent.com/114185236/232225577-4adc3aff-6cc5-448f-98b0-6719f9159cfc.jpg)
 
 Fig 5. Alert
 
 f. Second alert is raised - you should be classed as being in the national speed limit (motorway) area. 
 
-![image info](./images/secondalert.jpg)
+![secondalert](https://user-images.githubusercontent.com/114185236/232225585-e054b434-31e4-4f23-a8d0-6a7bed92668e.JPG)
 
 Fig 6. Alert
 
 g. Once the journey distance has been met the update event will be disabled and the close form will be presented.  
 
-![image info](./images/finish.jpg)
+![finish](https://user-images.githubusercontent.com/114185236/232225597-dc4bfe9d-55a5-4cea-acaf-52efac1b0ddd.JPG)
 
 Fig 7. Alert
 
@@ -66,23 +66,23 @@ The application and its classes are pre-set with fixed data (dictionaries, lists
 
 ### UML Diagrams
 
-![image info](./images/classdiagram.jpg)
+![classdiagram](https://user-images.githubusercontent.com/114185236/232225603-5a41525c-7ed9-49d9-bf9c-884d25940737.JPG)
 
 Fig 8. Class Diagram
 
-![image info](./images/activitydiagram.jpg)
+![activitydiagram](https://user-images.githubusercontent.com/114185236/232225608-c3862512-637d-48a6-896b-fddf894109a7.JPG)
 
 Fig 9. Activity Diagram
 
-![image info](./images/usecasediagram.jpg)
+![usecasediagram](https://user-images.githubusercontent.com/114185236/232225615-d09055d4-df95-41e0-9f6e-a19f0bee9af3.JPG)
 
 Fig 10. Use Case Diagram
 
-![image info](./images/sequencediagram.jpg)
+![sequencediagram](https://user-images.githubusercontent.com/114185236/232225624-c19d8b62-5ca3-4889-940b-8d5eefef7c0b.JPG)
 
 Fig 11. Sequence Diagram
 
-![image info](./images/statediagram.jpg)
+![statediagram](https://user-images.githubusercontent.com/114185236/232225627-977de3d5-7bae-4427-812c-166162f617ac.JPG)
 
 Fig 12. State Machine Diagram
 
