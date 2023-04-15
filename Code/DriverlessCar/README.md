@@ -22,7 +22,7 @@ The application will run first time with only control available to charge the ba
 
 a. Click the 'Charge Battery' button.
 
-![image info](./images/chargebattery.jpg)
+![image info](/images/chargebattery.jpg)
 
 Fig 1. First run
 
