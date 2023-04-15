@@ -22,6 +22,8 @@ The application will run first time with only control available to charge the ba
 
 a. Click the 'Charge Battery' button.
 
+![alt text](https://github.com/sbolder77/Portfolio/blob/main/Code/DriverlessCar/images/chargebattery.jpg)
+
 ![image info](/images/chargebattery.jpg)
 
 Fig 1. First run
