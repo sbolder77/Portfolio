@@ -1,0 +1,23 @@
+{
+    "commands": {
+        "Run": "python3 {{filepath}}",
+        "Run Python (tkinter)": "python3 toolkit.py"
+    },
+    "preview": {
+        "Virtual Desktop": "https://{{domain3050}}/",
+        "Project Index (static)": "https://{{domain}}/{{index}}",
+        "Current File (static)": "https://{{domain}}/{{filepath}}",
+        "Box URL": "http://{{domain3000}}/",
+        "Box URL SSL": "https://{{domain3000}}/",
+        "Viewer": "https://{{domain3050}}/"
+    },
+    "debugger": [
+        {
+            "type": "PYTHON3",
+            "command": "{{filepath}}",
+            "before": "",
+            "uuid": "6c228c3f-596c-c44a-399f-5d86a7e17bf9",
+            "name": "Debug"
+        }
+    ]
+}

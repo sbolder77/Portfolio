@@ -1,0 +1,34 @@
+SUCCESS,LOAD,24/11/2022 16:47:08,10 Records displayed in listview
+WARNING,WRITE,24/11/2022 17:04:24,No new records added as count is: 0
+SUCCESS,LOAD,24/11/2022 17:04:24,10 Records displayed in listview
+WARNING,WRITE,24/11/2022 17:04:42,No new records added as count is: 20
+SUCCESS,LOAD,24/11/2022 17:04:42,10 Records displayed in listview
+SUCCESS,WRITE,24/11/2022 17:04:50,Data added for new ID: 11
+SUCCESS,WRITE,24/11/2022 17:04:50,Data added for new ID: 12
+SUCCESS,WRITE,24/11/2022 17:04:50,Data added for new ID: 13
+SUCCESS,WRITE,24/11/2022 17:04:50,Data added for new ID: 14
+SUCCESS,WRITE,24/11/2022 17:04:50,Data added for new ID: 15
+SUCCESS,LOAD,24/11/2022 17:04:50,15 Records displayed in listview
+SUCCESS,SELECT,24/11/2022 17:16:04,Data displayed for ID: 11
+SUCCESS,SELECT,24/11/2022 17:16:08,Data displayed for ID: 1
+SUCCESS,SELECT,24/11/2022 17:16:11,Data displayed for ID: 3
+SUCCESS,SELECT,24/11/2022 17:16:11,Data displayed for ID: 5
+SUCCESS,SELECT,24/11/2022 17:16:13,Data displayed for ID: 6
+SUCCESS,SELECT,24/11/2022 17:16:13,Data displayed for ID: 7
+SUCCESS,SELECT,24/11/2022 17:16:14,Data displayed for ID: 8
+SUCCESS,SELECT,24/11/2022 17:16:16,Data displayed for ID: 11
+SUCCESS,LOAD,24/11/2022 17:18:32,15 Records displayed in listview
+SUCCESS,SELECT,24/11/2022 17:18:35,Data displayed for ID: 12
+SUCCESS,LOAD,24/11/2022 17:28:42,15 Records displayed in listview
+SUCCESS,SELECT,24/11/2022 17:28:46,Data displayed for ID: 15
+DELETE,INFO,24/11/2022 17:29:39,Status marked as deleted for ID: 15
+SUCCESS,LOAD,24/11/2022 17:30:06,14 Records displayed in listview
+RESTORE,INFO,24/11/2022 17:38:30,Status marked as unreleased for ID: 15
+SUCCESS,LOAD,24/11/2022 17:38:30,15 Records displayed in listview
+SUCCESS,LOAD,24/11/2022 17:39:18,15 Records displayed in listview
+SUCCESS,LOAD,24/11/2022 17:45:03,15 Records displayed in listview
+SUCCESS,SELECT,24/11/2022 17:45:23,Data displayed for ID: 11
+UPDATE,INFO,24/11/2022 17:47:59,Original values for: 11 - [AST] - Provide summary - KB15 - Please provide product - U - AST -  - Please enter filename
+UPDATE,INFO,24/11/2022 17:47:59,New updated values for: 11 - [AST] - AWS S3 Connectivity v1 - KB11 - SampleManager 21.1 - R - Module - 24/11/2022 - [AST] - AWS S3 Connectivity v1.zip
+SUCCESS,LOAD,24/11/2022 17:47:59,15 Records displayed in listview
+SUCCESS,SELECT,24/11/2022 17:48:02,Data displayed for ID: 11
