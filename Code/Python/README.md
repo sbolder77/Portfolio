@@ -52,6 +52,7 @@ under the 'Write New Toolkit/s' button. If an accepted value is added the applic
 The detail of the values for that record will be Generic so they can be modified, and the objects will be marked as 'Unreleased'.
 
 ![Resources/recordstoadd](Resources/recordstoadd.JPG)
+
 Fig5. Recordstoadd.jpg
 
 ![Resources/recordsaddedmsg](Resources/recordsaddedmsg.JPG)
