@@ -35,15 +35,62 @@
 										<h2 id="content">Initial Post</h2>
 										<p>The OWASP coding weakness I have focussed on in my discussion is A09:2021-Security Logging and Monitoring Failures. I have represented the flow of a sample registration using an activity diagram as a high-level process flow.
 										<br>
+										<br>
 										The activity diagram highlights the steps that would be executed in a laboratory for logging and testing a sample as well as sending results. By only logging the select events of authentication and logging in a sample it fails to identify all the logging or monitoring that would be required through the process which would be recognised as a weakness and broken. With the sensitivity and criticality of the process and data, it should be assumed that security logging and monitoring would take place across all steps. By being able to complete the sample after authentication the software bypasses authorisation and emailing sample data is also not logged so the software misses crucial auditing and system logs/monitoring.
+										<br>
 										<br>
 										In addition to an activity diagram use case diagrams would be an appropriate choice to successfully represent the actors required for consuming and actioning logging and monitoring events that are captured through the software.
 										<br>
+										<br>
 										Furthermore, a sequence diagram would support the messages and their states through the software transaction process. The activity diagram could maintain the process flow and the supporting diagrams would surface the objects and states to log and monitor.
+										<br>
 										<br>
 										References: OWASP. (2023) OWASP Top Ten. Available from: https://owasp.org/www-project-top-ten/ [Accessed 10/8/23].</p>
 										<br>
 										<img src="images/SSD Unit1 Collab UML small.jpg" alt="" />
+										<br>
+										<br>
+										<br>
+										<h2 id="content">Peer Response</h2>
+										<p>Thanks for your post.
+										<br>
+										<br>
+										I enjoyed reading your post regarding a new OWASP weakness I have not yet illustrated a diagram for. I appreciated your inclusion of the ‘Log’ behaviour in your activity diagram and explanation of how the absence of logging at different steps of the activity process, as it relates to the system, would be a weakness leading to compromise of the system. Although, I would argue what is the efficiency in logging every single activity of the system at every step? I suggest that perhaps logging crucial intersections which are not bypassable would be more efficient as it relates to logging information and more efficient as it relates to providing auditors and monitors with usable and meaningful data.
+										<br>
+										<br>
+										I agree with your discussion that a use case diagram would be meaningful by illustrating how actors interact with the system and are prone to or affected by the logging actions performed by the system. Although, I believe that the activity diagram you have presented delivers a more meaningful illustration versus a sequence diagram. This is because the most important focus of the diagram is the logging and the noise of a sequence diagram would take away meaning from logging represented in the diagram. Furthermore, to this notion the current activity diagram you have presented may benefit from highlighting the ‘Log’ steps.
+										<br>
+										<br>
+										References:
+										Common Weakness Enumeration (2017) CWE View: Weaknesses in OWASP Top Ten. Available: https://cwe.mitre.org/data/definitions/1026.html.
+										<br>
+										OWASP. (2023) OWASP Top Ten. Available from: https://owasp.org/www-project-top-ten/ [accessed 14/08/2023].
+										<br>
+										Rumbaugh, J., Jacobson, I. & Booch, G. (1999) 'The Unified Modeling Language Reference Manual', Addison Wesley Longman, Inc.</p>
+										<br>
+										<br>
+										<h2 id="content">Summary Post</h2>
+										<p>After reviewing responses and feedback and from peers and reviewing my initial post I have made revisions and updates to my original thoughts and ideas and to further clarify my original post.
+										<br>
+										<br>
+										As there is no specific academic literature on the process of logging in a patient sample my original post was based on professional experience and the process i defined was from a very high level brief so it is an interpretation or abstraction of many potential sequences.
+										<br>
+										<br>
+										As a Solution Architect for LIMS (Laboratory Information Management Systems) software I have been immersed in the UK's covid diagnostic testing response over the past 2-3 years as well as implementations for WADA (World Anti Doping Agency). What was a common factor was the capture of logs for auditing, trending and regulatory practices. When dealing with patient samples while we do have to consider GDPR and PID (Personal Identifiable Data) we also need to consider who has interacted or processed that data and often as mentioned for regulatory and accreditation purposes. My original post while using an activity diagram was very simplistic and whilst attempting to illustrate the points at where logging and monitoring would be broken it did not elaborate far enough what the logs or monitoing would be.
+										<br>
+										<br>
+										Based on feedback i restructured my activity diagram into 3 individual processes to reflect the sequence for specific actors. By doing this we can identify the specific steps and sequences for an actor. An argumnet could be made to also use use case diagrams per actor but an activity diagram still remains relevant to document the process. For example in the new diagrams the login process is logged for all actors however for the lab technician diagram we are not logging for entering results. This would be a critical step in the lifecycle of a patient sample as we would need to record who it was, what the result value was, when the result was entered and these would typically be recorded or logged. Similarily email notifications or emailing results would be logged not only from a system perspective that emails had been sent and what was in the email but would also support monitoring of system tasks such as what email service was used and how was it authenticated against if using SFTP. And by having steps to authorise a sample we are not only logging and monitoring RBAC (Role Based Access Control - which is assumed in the diagrams) but also acknowledging that the sample result has been authorised to be sent back to a patient. By tracking such events this can often be referred to as chain of custody. Prayudi & Sn (2015) discuss the aspects of physical as well as digital forensics. While this can often be associated more specifically to forensic science and the 'audit' of a sample in a criminal case the term chain of custody is often referred to in most laboratory practices so is a useful reference when discussing the digital trail involved in a patient sample and is often a consideration of most Quality Control or Assurance departments and specialists in scientific organisations.
+										<br>
+										<br>
+										References:
+										<br>
+										OWASP. (2023) OWASP Top Ten. Available from: https://owasp.org/www-project-top-ten/ [accessed 14/08/2023].
+										<br>
+										Rumbaugh, J., Jacobson, I. & Booch, G. (1999) 'The Unified Modelling Language Reference Manual', Addison Wesley Longman, Inc.
+										<br>
+										Prayudi, Y. & Sn, A. (2015) Digital chain of custody: State of the art. International Journal of Computer Applications, 114(5).</p>
+										<br>
+										<img src="images/SSD Unit1 Collab UML Updated.jpg" alt="" />
 										
 									<hr class="major" />
 								
