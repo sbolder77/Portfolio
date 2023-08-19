@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>E-Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+								<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>E-Portfolio</strong> - Simon Bolder</a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/simon-bolder-497bb17" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</header>
+								
+								<!-- Banner -->
+								<section>
+									<header class="main">
+										<h1>Discussion 1</h1> 
+									</header>
+									<!-- Content -->
+										<h2 id="content">Initial Post</h2>
+										<p>The OWASP coding weakness I have focussed on in my discussion is A09:2021-Security Logging and Monitoring Failures. I have represented the flow of a sample registration using an activity diagram as a high-level process flow.
+										<br>
+										The activity diagram highlights the steps that would be executed in a laboratory for logging and testing a sample as well as sending results. By only logging the select events of authentication and logging in a sample it fails to identify all the logging or monitoring that would be required through the process which would be recognised as a weakness and broken. With the sensitivity and criticality of the process and data, it should be assumed that security logging and monitoring would take place across all steps. By being able to complete the sample after authentication the software bypasses authorisation and emailing sample data is also not logged so the software misses crucial auditing and system logs/monitoring.
+										<br>
+										In addition to an activity diagram use case diagrams would be an appropriate choice to successfully represent the actors required for consuming and actioning logging and monitoring events that are captured through the software.
+										<br>
+										Furthermore, a sequence diagram would support the messages and their states through the software transaction process. The activity diagram could maintain the process flow and the supporting diagrams would surface the objects and states to log and monitor.
+										<br>
+										References: OWASP. (2023) OWASP Top Ten. Available from: https://owasp.org/www-project-top-ten/ [Accessed 10/8/23].</p>
+										<br>
+										<img src="images/SSD Unit1 Collab UML small.jpg" alt="" />
+										
+									<hr class="major" />
+								
+								<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
