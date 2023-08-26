@@ -36,15 +36,15 @@
 										<p>The exercise was run in the codio environment. By having a prepared script the code could be executed to output a result. While the exercise was simplistic in it's nature to describe the use of queues and threads there were elements that could be improved.</p>
 										<br>
 										<h3 id="content">Question 1</h3>
-										<p>How is the queue data structure used to achieve the purpose of the code? It suplies a linear data structure similar to a stack. As it stores items sequentially the consumer can then take the next item in the queue.</p>
+										<p>How is the queue data structure used to achieve the purpose of the code? It supplies a linear data structure similar to a stack. As it stores items sequentially the consumer can then take the next item in the queue.</p>
 										<h3 id="content">Question 2</h3>
-										<p>What is the purpose of q.put(I)? q.put[i] will add an element to the queue as well block if a queue has reached it maximum capacity.</p>
+										<p>What is the purpose of q.put(I)? q.put[i] will add an element to the queue as well as block if a queue has reached it maximum capacity.</p>
 										<h3 id="content">Question 3</h3>
 										<p>What is achieved by q.get()? q.get() will remove and return an item from the queue.</p>
 										<h3 id="content">Question 4</h3>
 										<p>What functionality is provided by q.join()? q.join() will block the threads until the consumers have processed the elements of the queue.</p>
 										<h3 id="content">Question 5</h3>
-										<p>What technique(s) would be appropriate to secure the code? While not extending the code in this exercise there are several options to securing producer-consumer code. (Brownlee 2022) signal shutdown where a sentinel object could be placed into the buffer by a producer acting as a clear message to consumers. This could prevent rogue input tinot a buffer potetnially adding more elements. Other methods could be using maxsize parameters to to limt the size of a queue. By setting this and adding logic in your code that controls how many elements are added to the queue you could restrict the risk of incorrectly sized queue or making it infinite leading to overflow or corruption of data.</p>
+										<p>What technique(s) would be appropriate to secure the code? While not extending the code in this exercise there are several options to securing producer-consumer code. (Brownlee 2022) discusses the use of a signal shutdown where a sentinel object could be placed into the buffer by a producer acting as a clear message to consumers. This could prevent rogue input into a buffer potetnially adding more elements. Other methods could be the use of maxsize parameters to to limit the size of a queue. By setting this and adding logic in your code that controls how many elements are added to the queue you could restrict the risk of incorrectly sized queue or making it infinite leading to overflow or corruption of data.</p>
 										<br>
 										<br>
 										References: 
