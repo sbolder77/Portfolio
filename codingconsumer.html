@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>E-Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+								<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>E-Portfolio</strong> - Simon Bolder</a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/simon-bolder-497bb17" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</header>
+								
+								<!-- Banner -->
+								<section>
+									<header class="main">
+										<h1>The Producer-Consumer Mechanism</h1> 
+									</header>
+									<!-- Content -->
+										<h2 id="content">Python exercise</h2>
+										<p>The exercise was run in the codio environment. By having a prepared script the code could be executed to output a result. While the exercise was simplistic in it's nature to describe the use of queues and threads there were elements that could be improved.</p>
+										<br>
+										<h3 id="content">Question 1</h3>
+										<p>How is the queue data structure used to achieve the purpose of the code? It suplies a linear data structure similar to a stack. As it stores items sequentially the consumer can then take the next item in the queue.</p>
+										<h3 id="content">Question 2</h3>
+										<p>What is the purpose of q.put(I)? q.put[i] will add an element to the queue as well block if a queue has reached it maximum capacity.</p>
+										<h3 id="content">Question 3</h3>
+										<p>What is achieved by q.get()? q.get() will remove and return an item from the queue.</p>
+										<h3 id="content">Question 4</h3>
+										<p>What functionality is provided by q.join()? q.join() will block the threads until the consumers have processed the elements of the queue.</p>
+										<h3 id="content">Question 5</h3>
+										<p>What technique(s) would be appropriate to secure the code? While not extending the code in this exercise there are several options to securing producer-consumer code. (Brownlee 2022) signal shutdown where a sentinel object could be placed into the buffer by a producer acting as a clear message to consumers. This could prevent rogue input tinot a buffer potetnially adding more elements. Other methods could be using maxsize parameters to to limt the size of a queue. By setting this and adding logic in your code that controls how many elements are added to the queue you could restrict the risk of incorrectly sized queue or making it infinite leading to overflow or corruption of data.</p>
+										<br>
+										<br>
+										References: 
+										<br>
+										<p>Brownlee, J. (2022) Thread Producer-Consumer Pattern in Python Available from: https://superfastpython.com/thread-producer-consumer-pattern-in-python/ [Accessed 26/8/23].</p>
+										<br>
+										<img src="images/producerconsumercode.jpg" alt="" />
+										<br>
+										<img src="images/producerconsumeroutput.jpg" alt="" />
+									<hr class="major" />
+								
+								<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
