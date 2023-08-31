@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>E-Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+								<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>E-Portfolio</strong> - Simon Bolder</a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/simon-bolder-497bb17" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</header>
+								
+								<!-- Banner -->
+								<section>
+									
+									<!-- Content -->
+										<h2 id="content">Programming language concepts</h2>
+										<p>Discuss ReDOS and 'Evil Regex'</p>
+										<br>
+										<h3 id="content">Question 1</h3>
+										<p>What is ReDOS and what part do ‘Evil Regex’ play?</p>
+										<p>ReDOS (Regular Expression Denial of Service) is an exploitation of regular expresion through a Denial of Service attack resulting in overloading software and causing performance issues or hung states. Weidman (n.d.) explains Evil Regex by defining it as crafted input to run against a regex pattern. This definition is simplistic in nature as Evil Regex is a very powerful way of applying a DoS attack. By exploiting something as simple as a regex pattern that has been structured poorly or incorrectly Evil Regex becomes very powerful. Therefore the use of Evil Regex and tools like EGRET (Larson & Kirk 2016) to test and identify even a subset of potential regex patterns highlights the potential risks to software and the potential addition of wider surface attacks.</p>
+										<h3 id="content">Question 2</h3>
+										<p>What are the common problems associated with the use of regex? How can these be mitigated?</p>
+										<p>One of the main problems associated with regex is the ability to write expressions that are too simplistic and in turn accept too many strings which can often be associated with programmer error. Additionally many developers find the challenge of building regular expressions complex and difficult especially when defining the problem they are trying to solve. (Michael 2019) discusses the difficulty programmers face when working with regex. These problems typically fall under understanding structure, syntax, usability and testing. To mitigate the problems identified here one could consider a number of factors. This could include professional development and more targeted training and understanding of coding practices. Furthermore, considering usability by having a lower level of cyclomatic complexity or a reusable and tested library of well structured and tested regex patterns would also be a consideration.</p>
+										<h3 id="content">Question 3</h3>
+										<p>How and why could regex be used as part of a security solution?</p>
+										<p>One would assume the subject of security or a security solution/module would involve the securing of credentials. A use case to be considered for regex would be well defined patterns for user ID's, email addresses, alphanumeric values. If a well defined pattern was in place with a combination of built in functions like len to limit the length of a string. If an application was to generate a user id when an account is created you could apply regex to subsequent logins using user id to look for a specific pattern. Additionally, if an email address was to be used you could not only build well structured patterns of an email address but combine that with checks against database records for a matching email address offering 2 levels of verification that an email address was valid. There could be many other examples where regex would be applicable to building a secure solution but as discussed the challenge remains. What problem am i solving? Is regex applicable? Do i understand regex well enough and has it been done before?</p>
+										<br>
+										<p>References:
+										<br>
+										Weidman, A (n.d.) Regular expression Denial of Service - ReDoS Avaialble from https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS [Accessed on 30/08-2023]
+										<br>
+										Larson, E. and Kirk, A. (2016) April. Generating evil test strings for regular expressions. In 2016 IEEE International Conference on Software Testing, Verification and Validation (ICST) 309-319. IEEE.
+										<br>
+										Michael IV, L.G. (2019) Exploring the Process and Challenges of Programming with Regular Expressions (Doctoral dissertation, Virginia Tech).</p>
+										
+										
+									<hr class="major" />
+								
+								<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
