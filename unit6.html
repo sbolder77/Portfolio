@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>E-Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+								<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>E-Portfolio</strong> - Simon Bolder</a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/simon-bolder-497bb17" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</header>
+								
+								<!-- Banner -->
+								<section>
+									<!-- Content -->
+									<h2 id="content">Exploring Linters to Support Testing in Python</h2>
+									<p>The exercise was to run several code examples to determine programmatical issues and assess and resolve issues using tools including pylint, flask and mccabe.</p>
+									<h3 id="content">Question 1</h3>
+									<p>What happens when the code is run? The code itself is formatted incorrectly with no indentation so had to be fixed to allow execution. Additionally, the code when fixed did not return anything to the terminal so had to be modified to include an output of the result of the factorial calculation.</p>
+									<h3 id="content">Original Code</h3>
+									<img src="images/styleLintOriginal.jpg" alt="" />
+									<br>
+									<br>
+									<h3 id="content">Modified Code</h3>
+									<img src="images/styleLintUpdated.jpg" alt="" />
+									<br>
+									<br>
+									<h3 id="content">Output</h3>
+									<img src="images/styleLintOutput.jpg" alt="" />
+									<hr class="major" />
+									<h3 id="content">Question 2</h3>
+									<p>Can you correct each of the errors identified by pylint? The code has several issues and Pylint was used to assess the quality of the code. The follwoing outputs show the various stages of Pylint testing and remediation of the code to resolve the code issues.</p>
+									</p>
+									<h3 id="content">Original Code</h3>
+									<img src="images/pylintTestOriginal.jpg" alt="" />
+									<br>
+									<br>
+									<h3 id="content">Pylint Output</h3>
+									<img src="images/pylintadditionaloutput.jpg" alt="" />
+									<br>
+									<br>
+									<h3 id="content">Resolved Code</h3>
+									<img src="images/pylintTestUpdated.jpg" alt="" />
+									<br>
+									<br>
+									<h3 id="content">Pylint Updated Output</h3>
+									<img src="images/pylintupdatedoutput.jpg" alt="" />
+									<br>
+									<hr class="major" />
+									<h3 id="content">Question 3</h3>
+									<p>How does Flake differ from Pylint? The exercise was to run and use flake8 against several .py files and to assess the difference between flake and pylint. The obvious difference is that flake looks more at style errors (it will look at syntax as well) so would be better suited for identifying incorrect indentation and line spacing for example. For example on the pylint_test.py file flake8 returned an error on line 16 to indicate an error on whitespace around operators.</p>
+									</p>
+									<h3 id="content">Flake Result</h3>
+									<img src="images/flake8pylinttestoutput.jpg" alt="" />
+									<br>
+									<br>
+									<h3 id="content">Problem Code</h3>
+									<img src="images/pylinttestline16.jpg" alt="" />
+									<br>
+									<br>
+									<h3 id="content">Fixed Code</h3>
+									<img src="images/pylinttestline16updated.jpg" alt="" />
+									<br>
+									<br>
+									<h3 id="content">Flake8 Result 2</h3>
+									<img src="images/flake8pylinttestoutputfixed.jpg" alt="" />
+									<br>
+									<hr class="major" />
+								<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
