@@ -29,45 +29,58 @@
 								<!-- Banner -->
 								<section>
 									<!-- Content -->
-									<h2 id="content">Equivalence testing in Python</h2>
-									<p>The exercise was to run an existing piece of code made avaialble in an online IDE. For this purpose i decided to use the code in Visual Studio. On initial inspection of the code there were a number of issues and pylint was used to examine the code. Pylint returned several issues which i actioned as part of the exercise to make the code more favourable. Once the code was refactored pylint returned no warnings. By renaming variables, adding docstrings and other general formatting and restructuring of the code Pylint returned 0 warnings.
-									<br>
-									<br>
-									Whilst I did not investigate the functionality of the code to any great length i found that there were more issues to be resolved with Pylint to rectify poor structure, naming conventions and commentary. Upon investigating the code there were some observations. Mainly the recommendation from Pylint to move the lamda expression into it's own function. This is a really good example of the efficeinecy of the Pylint tool whilst also reducing complexity by placing the expression into a reusable function.
-									<br>
-									<br>
-									However, on intial inspection I did feel that there was unnecessary complexity in the code functions. The main one been the nesting of for loops. From a coding perspective a developer would not want to introduce to many nested for loops within a loop as it leads to confusion and overly complex code.
+									<h2 id="content">API development</h2>
+									<p>The exercise was to use a prepared python script to run, analyse and inspect a simplistic API built and executed in Python. Examining the execution and calls to pre-set API endpoints we were set with several questions related to the running and use of the API.
 									</p>
-									<h3 id="content">Pylint results</h3>
-									<img src="images/equivalence_pylint1.jpg" alt="" />
+									<h3 id="content">Question 1</h3>
+									<p>What command did you use to compile and run the code? The code was run locally using the windows command line.</p>
+									<img src="images/unit7apiterminaloutputq1.jpg" alt="" />
 									<br>
 									<br>
-									<h3 id="content">Equivalence original</h3>
-									<img src="images/equivalenceoriginal.jpg" alt="" />
+									<h3 id="content">Question 2</h3>
+									<p>What happens when this command (http://127.0.0.1:5000/user/Ann) is run, and why? Whilst not executing a command the result can be achieved by calling the URL in a browser. The terminal that is already running records and logs the transaction and returns the appropriate HTTP response. In this example a 200 (success) message is recorded in the terminal as the user 'Ann' exists.</p>
+									<img src="images/unit7apiterminaloutputq2.jpg" alt="" />
 									<br>
 									<br>
-									<h3 id="content">Equivalence updated</h3>
-									<img src="images/equivalenceupdated.jpg" alt="" />
+									<h3 id="content">Question 3</h3>
+									<p>What happens when this command (http://127.0.0.1:5000/user/Adam) is run, and why? As per question 2 the command was executed in a browser. The difference in this scenario is the HTTP response is different. A 404 (error) is returned as the user 'Adam' does not exist. The message is dispakyed in the html.</p>
+									<img src="images/unit7apiterminaloutputq3.jpg" alt="" />
 									<br>
+									<br>
+									<h3 id="content">Question 4</h3>
+									<p>What capability is achieved by the flask library?</p>
+									<p>By importing the Flask library python has the capability of defining structured code for API functionality without having to code everything from scratch. Flask contains modules and functions inside the library that facilitate the creation of APIs in Python.</p>
 									<hr class="major" />
-									<h2 id="content">Cyclomatic complexity relevance today</h2>
-										<p>One of the challenges of software and secure software design is the validity of code and it's inherent testing and the scale of re-usability and modularity. McCabe's Cyclomatic Complexity is often considered but does it still retain relevance today with trends such as Agile software development leading to quicker, iterative design, build and release or with the rising popularity in microservices. Cyclomatic complexity determines stability and confidence in a program by measuring the number of linear and independent paths through software.
-										<br>
-										<br>
-										I consider cyclomatic complexity to have some relevance in current software design practices but given the rapid advances in programming languages, interoperability and methodologies it is perhaps not as relevant as when it was first proposed. (Shepperd 1988) debates that the high acceptance of the model by the software engineering community it is very rarely questioned. Whilst applying a rule of assessing control paths through a module it does not consider the complexity inside each path. Furthermore the assesment and review of maintenance of a new or existing solution would determine the complexity of code which may be more dependent on the organisation, resources and skills as well as the identified problem or requirements. These may determine the level of complexity required in software.
-										<br>
-										<br>
-										(Gill & Kemerer 1991) discuss the complexity of existing systems whilst assuming that complex systems are harder to maintain, suffer more entropy becoming chaotic. Whilst using cyclomatic complexity as a tool to asses exisiting modules does hold some relevance it is the organisation itself that determines the repair/replace decision so dependent on the maintenance on the existing code one could argue that logical decisions are made on cost, resource, time rather than reviewing how many linear steps or paths a piece of code has taken.
-										<br>
-										<br>
-										In summary i would still agree that elements of McCabe's cyclomatic complexity could still be applied. However, as discussed the evolution of programming languages, methodologies and libraries do significantly reduce levels of complexity. For example, delivering in an Agile method if building a new system would only deliver smaller tactical modules of code which would have limited dependency on exixting or future modules.  Libraries also offer the ability to leverage modules and functions that remove the need to write extensive code therefore making software more flexible and modular.</p>
-										<br>
-										<p>References:
-										<br>
-										Shepperd, M. (1988) A critique of cyclomatic complexity as a software metric. Software Engineering Journal, 3(2): 30-36.
-										<br>
-										Gill, G.K. and Kemerer, C.F. (1991) Cyclomatic complexity density and software maintenance productivity. IEEE transactions on software engineering, 17(12): 1284-1288.
-										<hr class="major" />
+									<h2 id="content">Simple Shell Command</h2>
+									<p>The exercise was to write a simple CLI/Shell command to execute and run a number of commands. Consideration was to be made to answer several question about the code.</p>
+									<img src="images/unit7shellcode.jpg" alt="" />
+									<br>
+									<br>
+									<h3 id="content">Question 1</h3>
+									<p>What are the two main security vulnerabilities with your shell? The 2 main security vulnerabilities are lack of access control or authorisation and the script has access to the underlying os. This exposes attack surfaces where an attacker could gain access or inject commands to the os as well as not providing any sort of RBAC or authorisation control to the script.</p>
+									<h3 id="content">Question 2</h3>
+									<p>What is one recommendation you would make to increase the security of the shell? Seperate the code out further to ensure it is modular with seperate classes as well as introduce some form of authorisation and authentication to restrict access.</p>
+									<h3 id="content">Pseudo code for program</h3>
+									<img src="images/unit7pseudocode.jpg" alt="" />
+									<br>
+									<br>
+									<p>References:
+									<br>
+									Prakash, D. (2018) Write a Shell in Python. Available from: https://danishpraka.sh/posts/shell-in-python/ [Accessed 23 September 2023].
+									<br>
+									Szabo, G. (2018) Create Your Own Interactive Shell with cmd in Python. Available from: https://code-maven.com/interactive-shell-with-cmd-in-python [Accessed 23 September 2023].
+									
+									<hr class="major" />
+									<h2 id="content">What is an Ontology?</h2>
+									<p>Ontologies, and more specifically in Computer Science can be defined as categories, properties and relations between concepts, data and entities in a domain. However, ontologies are not just specific to computer science and can be applied to many different industries and their subsequent domains.</p>
+									<p>(Gruber 1993) discusses how an Ontology is an explicit specification of a concept and a concept is an abstract view of the domain. While the observations are valid I disagree that an ontology is a specification of an abstracted view. Rather that ontologies today are often the abstarcted view of the domain and do not require a definition of their own. It is perhaps as domains and industries have expanded and advanced that ontologies are becoming more of a standard or reference for domains so therefore do not require 2 levels of definition. As with many other  </p>
+									<p>What is one recommendation you would make to increase the security of the shell? Seperate the code out further to ensure it is modular with seperate classes as well as introduce some form of authorisation and authentication to restrict access.</p>
+									<p>References:
+									<br>
+									Gruber, T. (1993) What is an Ontology.
+									<br>
+									Reyes-Pena, C. and Tovar-Vidal, M. (2019) Ontology: components and evaluation, a review. Research in Computing Science, 148(3): 257-265.
+									<hr class="major" />
 								
 								<!-- Footer -->
 								<footer id="footer">
