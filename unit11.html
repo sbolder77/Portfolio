@@ -29,44 +29,31 @@
 								<!-- Banner -->
 								<section>
 									<!-- Content -->
-									<h2 id="content">Equivalence testing in Python</h2>
-									<p>The exercise was to run an existing piece of code made avaialble in an online IDE. For this purpose i decided to use the code in Visual Studio. On initial inspection of the code there were a number of issues and pylint was used to examine the code. Pylint returned several issues which i actioned as part of the exercise to make the code more favourable. Once the code was refactored pylint returned no warnings. By renaming variables, adding docstrings and other general formatting and restructuring of the code Pylint returned 0 warnings.
-									<br>
-									<br>
-									Whilst I did not investigate the functionality of the code to any great length i found that there were more issues to be resolved with Pylint to rectify poor structure, naming conventions and commentary. Upon investigating the code there were some observations. Mainly the recommendation from Pylint to move the lamda expression into it's own function. This is a really good example of the efficeinecy of the Pylint tool whilst also reducing complexity by placing the expression into a reusable function.
-									<br>
-									<br>
-									However, on intial inspection I did feel that there was unnecessary complexity in the code functions. The main one been the nesting of for loops. From a coding perspective a developer would not want to introduce to many nested for loops within a loop as it leads to confusion and overly complex code.
-									</p>
-									<h3 id="content">Pylint results</h3>
-									<img src="images/equivalence_pylint1.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Equivalence original</h3>
-									<img src="images/equivalenceoriginal.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Equivalence updated</h3>
-									<img src="images/equivalenceupdated.jpg" alt="" />
-									<br>
-									<hr class="major" />
-									<h2 id="content">Cyclomatic complexity relevance today</h2>
-										<p>One of the challenges of software and secure software design is the validity of code and it's inherent testing and the scale of re-usability and modularity. McCabe's Cyclomatic Complexity is often considered but does it still retain relevance today with trends such as Agile software development leading to quicker, iterative design, build and release or with the rising popularity in microservices. Cyclomatic complexity determines stability and confidence in a program by measuring the number of linear and independent paths through software.
+									<h2 id="content">Faceted Data</h2>
+										<p>Regarding Appendix A of the Tanenbaum-Torvalds debate (DiBona & Ockman, 1999) and research conducted by Fritzch et al. (2019) I would agree that Microservices and Microkernels are the future. However, there are many design and architectural considerations to be made when discussing Monolithic v Microservice or Microkernel.
 										<br>
 										<br>
-										I consider cyclomatic complexity to have some relevance in current software design practices but given the rapid advances in programming languages, interoperability and methodologies it is perhaps not as relevant as when it was first proposed. (Shepperd 1988) debates that the high acceptance of the model by the software engineering community it is very rarely questioned. Whilst applying a rule of assessing control paths through a module it does not consider the complexity inside each path. Furthermore the assesment and review of maintenance of a new or existing solution would determine the complexity of code which may be more dependent on the organisation, resources and skills as well as the identified problem or requirements. These may determine the level of complexity required in software.
+										There do appear to be significant benefits of microservices and microkernels over monolithic kernels. Monolithic kernel architecture is dependent on tightly coupled programming. As they grow and develop these monolithic architectures can become complex introducing significant technical debt and making the product unmaintainable. The Tanenbaum-Torvalds debate from 1992 took place when 386 chips were dominant and as such the limits of technology are a factor in this discussion due to the nature of the 386 chipsets. The limited size of this chipset and early computing could be considered a contributing factor to the development of monolithic kernels and architecture. Furthermore, a monolithic application is a single application and therefore presents a single attack surface. Isaac et al. (2021) discuss the risks of monolithic architecture and how it leads to reliability and security issues and how a potential bug could lead to a buffer overrun causing a system to crash. In addition to the maintenance and complexity, these features of monolithic kernels have driven and promoted the move to microservices and microkernels.
 										<br>
 										<br>
-										(Gill & Kemerer 1991) discuss the complexity of existing systems whilst assuming that complex systems are harder to maintain, suffer more entropy becoming chaotic. Whilst using cyclomatic complexity as a tool to asses exisiting modules does hold some relevance it is the organisation itself that determines the repair/replace decision so dependent on the maintenance on the existing code one could argue that logical decisions are made on cost, resource, time rather than reviewing how many linear steps or paths a piece of code has taken.
+										Microkernels in contrast do offer advantages over Monolithic kernels. Isaac et al. (2021) in their review focussed on three significant features of microkernels including interprocess communication, process scheduling and memory management from the original L4 kernel to seL4, Muen separation Kernel and NOVA Micro-Hypervisor. The research clearly shows the further evolution of the microkernel architecture. Considering these 3 features the benefits of a microkernel architecture can be realised. Process scheduling can be driven by priority and schedulers can choose higher priority context from a run queue and introduce threading. Furthermore, the inclusion of Physical Memory Allocators (PMA) which are created for each CPU core offers further scalability and performance.
 										<br>
 										<br>
-										In summary i would still agree that elements of McCabe's cyclomatic complexity could still be applied. However, as discussed the evolution of programming languages, methodologies and libraries do significantly reduce levels of complexity. For example, delivering in an Agile method if building a new system would only deliver smaller tactical modules of code which would have limited dependency on exixting or future modules.  Libraries also offer the ability to leverage modules and functions that remove the need to write extensive code therefore making software more flexible and modular.</p>
+										With the introduction of cloud computing the concept of Microservices is also becoming more relevant. As with microkernels, microservices also seek to further decompose and decouple monolithic processes to provide more scalability. Additionally, the cloud and modern technologies and platforms provide high availability, and redundancy and are compliant with modern security standards. Fritzch et al. (2019) discuss how microservices address the inherent issues with monolithic applications. Identifying and encapsulating related modules into services drives loose coupling of application functionality. As with monolithic kernels, monolithic applications suffer from the same levels of complexity and can become unmaintainable.
 										<br>
+										<br>
+										However, there are challenges with microservice and microkernel architectures. One of the key challenges is the decomposition of the monolithic architecture and the strategies used. The decomposition strategies proposed by Fritzch et al. (2019) offer context and insight into static code analysis and meta-data aided. Furthermore, workload data and dynamic service composition are all strategies that should be followed when considering refactoring a monolithic architecture into a 'micro' architecture. The investment required to build a new microservices or microkernel architecture can be very expensive as well. Refactoring an existing monolithic architecture can be just as expensive. The benefits of a 'micro' architecture including the research and results have discovered that microservices and microkernels are the future.</p>
+										
 										<p>References:
 										<br>
-										Shepperd, M. (1988) A critique of cyclomatic complexity as a software metric. Software Engineering Journal, 3(2): 30-36.
 										<br>
-										Gill, G.K. and Kemerer, C.F. (1991) Cyclomatic complexity density and software maintenance productivity. IEEE transactions on software engineering, 17(12): 1284-1288.
+										Isaac, O.A., Okokpujie, K., Akinwumi, H., Juwe, J., Otunuya, H. and Alagbe, O., 2021, April. An Overview of Microkernel Based Operating Systems. In IOP Conference Series: Materials Science and Engineering (Vol. 1107, No. 1, p. 012052). IOP Publishing.
+										<br>
+										<br>
+										DiBona, C. & Ockman, S. (1999) Open Sources: Voices from the Open Source Revolution, 1st ed. Available from: https://www.oreilly.com/openbook/opensources/book/appa.html [Accessed: 27 October 2023].
+										<br>
+										<br>
+										Fritzsch, J., Bogner, J., Zimmermann, A. & Wagner, S. (2019) From Monolith to Microservices: A Classification of Refactoring Approaches. In: Bruel, J. M., Mazzara, M., Meyer, B. (eds) Software Engineering Aspects of Continuous Development and New Paradigms of Software Production and Deployment. DEVOPS 2018. Lecture Notes in Computer Science (11350). Springer.</p>
 										<hr class="major" />
 								
 								<!-- Footer -->

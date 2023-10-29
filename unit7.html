@@ -33,40 +33,238 @@
 									<p>The exercise was to use a prepared python script to run, analyse and inspect a simplistic API built and executed in Python. Examining the execution and calls to pre-set API endpoints we were set with several questions related to the running and use of the API.
 									</p>
 									<h3 id="content">Question 1</h3>
-									<p>What command did you use to compile and run the code? The code was run locally using the windows command line.</p>
-									<img src="images/unit7apiterminaloutputq1.jpg" alt="" />
-									<br>
-									<br>
+									<p>What command did you use to compile and run the code?</p>
+									<p>The code was run locally using the windows command line.</p>
+									<h3>API Code</h3>
+									<pre><code>#source of code: Codeburst
+
+from flask import Flask
+from flask_restful import Api, Resource, reqparse
+ 
+app = Flask(__name__)
+api = Api(app)
+ 
+users = [
+    {
+        "name": "James",
+        "age": 30,
+        "occupation": "Network Engineer"
+    },
+    {
+        "name": "Ann",
+        "age": 32,
+        "occupation": "Doctor"
+    },
+    {
+        "name": "Jason",
+        "age": 22,
+        "occupation": "Web Developer"
+    }
+]
+ 
+class User(Resource):
+    def get(self, name):
+        for user in users:
+            if(name == user["name"]):
+                return user, 200
+        return "User not found", 404
+ 
+    def post(self, name):
+        parser = reqparse.RequestParser()
+        parser.add_argument("age")
+        parser.add_argument("occupation")
+        args = parser.parse_args()
+ 
+        for user in users:
+            if(name == user["name"]):
+                return "User with name {} already exists".format(name), 400
+ 
+        user = {
+            "name": name,
+            "age": args["age"],
+            "occupation": args["occupation"]
+        }
+        users.append(user)
+        return user, 201
+ 
+    def put(self, name):
+        parser = reqparse.RequestParser()
+        parser.add_argument("age")
+        parser.add_argument("occupation")
+        args = parser.parse_args()
+ 
+        for user in users:
+            if(name == user["name"]):
+                user["age"] = args["age"]
+                user["occupation"] = args["occupation"]
+                return user, 200
+        
+        user = {
+            "name": name,
+            "age": args["age"],
+            "occupation": args["occupation"]
+        }
+        users.append(user)
+        return user, 201
+ 
+    def delete(self, name):
+        global users
+        users = [user for user in users if user["name"] != name]
+        return "{} is deleted.".format(name), 200
+      
+api.add_resource(User, "/user/<string:name>")
+ 
+app.run(debug=True)</code></pre>
+									<h3>API Execution</h3>
+									<pre><code>Microsoft Windows [Version 10.0.19045.3448]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32>cd "c:\test python"
+
+c:\test python>python api.py
+ * Serving Flask app 'api'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 460-601-867</code></pre>
 									<h3 id="content">Question 2</h3>
-									<p>What happens when this command (http://127.0.0.1:5000/user/Ann) is run, and why? Whilst not executing a command the result can be achieved by calling the URL in a browser. The terminal that is already running records and logs the transaction and returns the appropriate HTTP response. In this example a 200 (success) message is recorded in the terminal as the user 'Ann' exists.</p>
-									<img src="images/unit7apiterminaloutputq2.jpg" alt="" />
-									<br>
-									<br>
+									<p>What happens when this command (http://127.0.0.1:5000/user/Ann) is run, and why?</p> <p>Whilst not executing a command the result can be achieved by calling the URL in a browser. The terminal that is already running records and logs the transaction and returns the appropriate HTTP response. In this example a 200 (success) message is recorded in the terminal as the user 'Ann' exists.</p>
+									<h3>URL</h3>
+									<pre><code>http://127.0.0.1:5000/user/Ann</code></pre>
+									<h3>API Response</h3>
+									<pre><code>Microsoft Windows [Version 10.0.19045.3448]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32>cd "c:\test python"
+
+c:\test python>python api.py
+ * Serving Flask app 'api'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 460-601-867
+127.0.0.1 - - [22/Oct/2023 14:31:33] "GET /user/Ann HTTP/1.1" 200 -</code></pre>
+									<h3>API Output</h3>
+									<pre><code>{
+    "name": "Ann",
+    "age": 32,
+    "occupation": "Doctor"
+}</code></pre>
 									<h3 id="content">Question 3</h3>
-									<p>What happens when this command (http://127.0.0.1:5000/user/Adam) is run, and why? As per question 2 the command was executed in a browser. The difference in this scenario is the HTTP response is different. A 404 (error) is returned as the user 'Adam' does not exist. The message is dispakyed in the html.</p>
-									<img src="images/unit7apiterminaloutputq3.jpg" alt="" />
-									<br>
-									<br>
+									<p>What happens when this command (http://127.0.0.1:5000/user/Adam) is run, and why?</p>
+									<p>As per question 2 the command was executed in a browser. The difference in this scenario is the HTTP response is different. A 404 (error) is returned as the user 'Adam' does not exist. The message is displayed in the html.</p>
+									<h3>URL</h3>
+									<pre><code>http://127.0.0.1:5000/user/Adam</code></pre>
+									<h3>API Response</h3>
+									<pre><code>Microsoft Windows [Version 10.0.19045.3448]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32>cd "c:\test python"
+
+c:\test python>python api.py
+ * Serving Flask app 'api'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 460-601-867
+127.0.0.1 - - [22/Oct/2023 14:35:44] "GET /user/Adam HTTP/1.1" 404 -</code></pre>
+									<h3>API Output</h3>
+									<pre><code>"User not found"</code></pre>
 									<h3 id="content">Question 4</h3>
 									<p>What capability is achieved by the flask library?</p>
 									<p>By importing the Flask library python has the capability of defining structured code for API functionality without having to code everything from scratch. Flask contains modules and functions inside the library that facilitate the creation of APIs in Python.</p>
 									<hr class="major" />
 									<h2 id="content">Simple Shell Command</h2>
 									<p>The exercise was to write a simple CLI/Shell command to execute and run a number of commands. Consideration was to be made to answer several question about the code.</p>
-									<img src="images/unit7shellcode.jpg" alt="" />
-									<br>
-									<br>
+									<h3>Shell Code</h3>
+									<pre><code>'''Script to utilise basic CLI/Shell commands'''
+import os
+
+def shell_path():
+    """Prints the contents of the current working directory"""
+    print(os.listdir(os.getcwd()))
+    
+def shell_add():
+    """Prints the addtion of 2 numeric values"""
+    num1 = int(input("Please enter number 1: "))
+    num2 = int(input("Please enter number 2: "))
+    print(num1 + num2)
+
+def shell_help():
+    """Prints simple text about the python shell help"""
+    print("""psh: shell implementation in Python.
+          Supports all basic shell commands.""")
+
+def main():
+    """Executes functions based on input"""
+    while True:
+        inp = input("Please enter command in capitals - LIST/ADD/HELP/EXIT: ")
+        if inp == "LIST":
+            shell_path()
+        elif inp == "ADD":
+            shell_add()
+        elif inp == "HELP":
+            shell_help()
+        elif inp == "EXIT":
+            break
+
+if __name__ == '__main__':
+    main()</code></pre>
 									<h3 id="content">Question 1</h3>
-									<p>What are the two main security vulnerabilities with your shell? The 2 main security vulnerabilities are lack of access control or authorisation and the script has access to the underlying os. This exposes attack surfaces where an attacker could gain access or inject commands to the os as well as not providing any sort of RBAC or authorisation control to the script.</p>
+									<p>What are the two main security vulnerabilities with your shell?</p>
+									<p>The 2 main security vulnerabilities are lack of access control or authorisation and the script has access to the underlying os. This exposes attack surfaces where an attacker could gain access or inject commands to the os as well as not providing any sort of RBAC or authorisation control to the script.</p>
 									<h3 id="content">Question 2</h3>
-									<p>What is one recommendation you would make to increase the security of the shell? Seperate the code out further to ensure it is modular with seperate classes as well as introduce some form of authorisation and authentication to restrict access.</p>
-									<h3 id="content">Pseudo code for program</h3>
-									<img src="images/unit7pseudocode.jpg" alt="" />
-									<br>
-									<br>
+									<p>What is one recommendation you would make to increase the security of the shell?</p>
+									<p>Seperate the code out further to ensure it is modular with seperate classes as well as introduce some form of authorisation and authentication to restrict access.</p>
+									<h3>Pseudo Code</h3>
+									<pre><code>Import security modules
+Import cryptography modules
+
+Import classes
+
+Make variables private
+Make class instances private
+
+Define security function
+Define encryption function
+Define logging function
+
+Define LIST function and help
+Input for path
+Encrypt file contents in path
+Log on success/fail
+
+Define Add function and help
+Inputs for numeric values
+Validate numeric values
+Validate calculation
+Log on success/fail
+
+Define HELP function
+Parameters for help
+Log on success/fail
+
+Define EXIT function
+Safely and securely exit code
+Log on success/fail
+
+Define MAIN function
+Check user security
+Inputs for command to call</code></pre>
 									<p>References:
 									<br>
+									<br>
 									Prakash, D. (2018) Write a Shell in Python. Available from: https://danishpraka.sh/posts/shell-in-python/ [Accessed 23 September 2023].
+									<br>
 									<br>
 									Szabo, G. (2018) Create Your Own Interactive Shell with cmd in Python. Available from: https://code-maven.com/interactive-shell-with-cmd-in-python [Accessed 23 September 2023].
 									
@@ -77,7 +275,9 @@
 									<p>What is one recommendation you would make to increase the security of the shell? Seperate the code out further to ensure it is modular with seperate classes as well as introduce some form of authorisation and authentication to restrict access.</p>
 									<p>References:
 									<br>
+									<br>
 									Gruber, T. (1993) What is an Ontology.
+									<br>
 									<br>
 									Reyes-Pena, C. and Tovar-Vidal, M. (2019) Ontology: components and evaluation, a review. Research in Computing Science, 148(3): 257-265.
 									<hr class="major" />

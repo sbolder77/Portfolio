@@ -29,45 +29,71 @@
 								<!-- Banner -->
 								<section>
 									<!-- Content -->
-									<h2 id="content">Equivalence testing in Python</h2>
-									<p>The exercise was to run an existing piece of code made avaialble in an online IDE. For this purpose i decided to use the code in Visual Studio. On initial inspection of the code there were a number of issues and pylint was used to examine the code. Pylint returned several issues which i actioned as part of the exercise to make the code more favourable. Once the code was refactored pylint returned no warnings. By renaming variables, adding docstrings and other general formatting and restructuring of the code Pylint returned 0 warnings.
-									<br>
-									<br>
-									Whilst I did not investigate the functionality of the code to any great length i found that there were more issues to be resolved with Pylint to rectify poor structure, naming conventions and commentary. Upon investigating the code there were some observations. Mainly the recommendation from Pylint to move the lamda expression into it's own function. This is a really good example of the efficeinecy of the Pylint tool whilst also reducing complexity by placing the expression into a reusable function.
-									<br>
-									<br>
-									However, on intial inspection I did feel that there was unnecessary complexity in the code functions. The main one been the nesting of for loops. From a coding perspective a developer would not want to introduce to many nested for loops within a loop as it leads to confusion and overly complex code.
+									<h2 id="content">Cryptography</h2>
+									<p>The exercise was to create a python program using a cryptography algorithim to encrypt and decrypt a text file.
 									</p>
-									<h3 id="content">Pylint results</h3>
-									<img src="images/equivalence_pylint1.jpg" alt="" />
+									<h3 id="content">Question 1</h3>
+									<p>Why did you select the algorithm you chose?</p>
+									<p>I chose to implement this code using the Fernet python library and using symmetric encryption on top of an AES algorithim. For the purposes of the code the use of symmetric encryption proved to be a more practical way of encryption by utilising the same key for both encryption and decryption. The choice however of using AES encryption was based on its inclusion in the ISO/IEC 18033-3 standard. Additionally it is the only public accessible cipher approved by the U.S. National Security Agency (NSA).</p>
+									<h3 id="content">Question 2</h3>
+									<p>Would it meet the GDPR regulations?</p>
+									<p>Depndent on which GDPR model you are using (UK, EU or indeed other global data protection standards) it appears that the algorithim does meet GDPR regulations. The Data Protection Act 2018 and the General Data Protection Regulation (GDPR) states that information must is used fairly, lawfully and transparently. With the correct development the use of the Fernet cryptography and the full encryption of file and contents meets this. While not dealing with specific pieces of data in the file but encrypting the whole file there is less risk of other Personal Identifiable Data (PID) within the file been exposed. Full data could be encrypted at rest and only decrypted for the purposes of read or write transactions by back end code. There are other standards, algorithims and ciphers avaialable that organisations would prefer to use from a security perspective. There is a dependency here on risk, cost, human factors and the criticality of data when developing software and the data protection principles to be applied.</p>
+									<h3>Code</h3>
+										<pre><code>'''https://thepythoncode.com/article/encrypt-decrypt-files-symmetric-python?utm_content=cmp-true'''
+from cryptography.fernet import Fernet
+
+file_data = 'cryptography_test_file.csv'
+
+def write_key():
+    key = Fernet.generate_key()
+    with open("key.key", "wb") as key_file:
+        key_file.write(key)
+
+def load_key():
+    return open("key.key", "rb").read()
+
+def encrypt(filename, key):
+    f = Fernet(key)
+    with open(filename, "rb") as file:
+        file_data = file.read()
+    encrypted_data = f.encrypt(file_data)
+    with open(filename, "wb") as file:
+        file.write(encrypted_data)
+
+def decrypt(filename, key):
+    f = Fernet(key)
+    with open(filename, "rb") as file:
+        encrypted_data = file.read()
+    decrypted_data = f.decrypt(encrypted_data)
+    with open(filename, "wb") as file:
+        file.write(decrypted_data)
+
+#write_key()
+key = load_key()
+file = 'cryptography_test_file.csv'
+encrypt(file, key)
+#decrypt(file, key)</code></pre>
+									<h3>Diagram</h3>
+										<div class="box">
+										<h3>Unencrypted</h3>
+										<img src="images/cryptocodedecrypted.jpg" alt="" />
+										<br>
+										<br>
+										<h3>Encrypted</h3>
+										<img src="images/cryptocodeencrypted.jpg" alt="" />
+										</div>
+									<p>References:
 									<br>
 									<br>
-									<h3 id="content">Equivalence original</h3>
-									<img src="images/equivalenceoriginal.jpg" alt="" />
+									Junestam, A. and Guigo, N. (2014) Open Crypto Audit Project TrueCrypt.
 									<br>
 									<br>
-									<h3 id="content">Equivalence updated</h3>
-									<img src="images/equivalenceupdated.jpg" alt="" />
+									Cryptography with Python. Available from: https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_quick_guide.htm [Accessed 30 September 2023].
 									<br>
+									<br>
+									How to Encrypt and Decrypt Files in Python. Available from: https://thepythoncode.com/article/encrypt-decrypt-files-symmetric-python?utm_content=cmp-true [Accessed 30 September 2023].
+									</p>
 									<hr class="major" />
-									<h2 id="content">Cyclomatic complexity relevance today</h2>
-										<p>One of the challenges of software and secure software design is the validity of code and it's inherent testing and the scale of re-usability and modularity. McCabe's Cyclomatic Complexity is often considered but does it still retain relevance today with trends such as Agile software development leading to quicker, iterative design, build and release or with the rising popularity in microservices. Cyclomatic complexity determines stability and confidence in a program by measuring the number of linear and independent paths through software.
-										<br>
-										<br>
-										I consider cyclomatic complexity to have some relevance in current software design practices but given the rapid advances in programming languages, interoperability and methodologies it is perhaps not as relevant as when it was first proposed. (Shepperd 1988) debates that the high acceptance of the model by the software engineering community it is very rarely questioned. Whilst applying a rule of assessing control paths through a module it does not consider the complexity inside each path. Furthermore the assesment and review of maintenance of a new or existing solution would determine the complexity of code which may be more dependent on the organisation, resources and skills as well as the identified problem or requirements. These may determine the level of complexity required in software.
-										<br>
-										<br>
-										(Gill & Kemerer 1991) discuss the complexity of existing systems whilst assuming that complex systems are harder to maintain, suffer more entropy becoming chaotic. Whilst using cyclomatic complexity as a tool to asses exisiting modules does hold some relevance it is the organisation itself that determines the repair/replace decision so dependent on the maintenance on the existing code one could argue that logical decisions are made on cost, resource, time rather than reviewing how many linear steps or paths a piece of code has taken.
-										<br>
-										<br>
-										In summary i would still agree that elements of McCabe's cyclomatic complexity could still be applied. However, as discussed the evolution of programming languages, methodologies and libraries do significantly reduce levels of complexity. For example, delivering in an Agile method if building a new system would only deliver smaller tactical modules of code which would have limited dependency on exixting or future modules.  Libraries also offer the ability to leverage modules and functions that remove the need to write extensive code therefore making software more flexible and modular.</p>
-										<br>
-										<p>References:
-										<br>
-										Shepperd, M. (1988) A critique of cyclomatic complexity as a software metric. Software Engineering Journal, 3(2): 30-36.
-										<br>
-										Gill, G.K. and Kemerer, C.F. (1991) Cyclomatic complexity density and software maintenance productivity. IEEE transactions on software engineering, 17(12): 1284-1288.
-										<hr class="major" />
 								
 								<!-- Footer -->
 								<footer id="footer">

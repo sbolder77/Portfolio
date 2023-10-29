@@ -32,74 +32,252 @@
 									<h2 id="content">Exploring Linters to Support Testing in Python</h2>
 									<p>The exercise was to run several code examples to determine programmatical issues and assess and resolve issues using tools including pylint, flask and mccabe.</p>
 									<h3 id="content">Question 1</h3>
-									<p>What happens when the code is run? The code itself is formatted incorrectly with no indentation so had to be fixed to allow execution. Additionally, the code when fixed did not return anything to the terminal so had to be modified to include an output of the result of the factorial calculation.</p>
-									<h3 id="content">Original Code</h3>
-									<img src="images/styleLintOriginal.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Modified Code</h3>
-									<img src="images/styleLintUpdated.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Output</h3>
-									<img src="images/styleLintOutput.jpg" alt="" />
-									<hr class="major" />
+									<p>What happens when the code is run?</p>
+									<p>The code itself is formatted incorrectly with no indentation so had to be fixed to allow execution. Additionally, the code when fixed did not return anything to the terminal so had to be modified to include an output of the result of the factorial calculation.</p>
+									<h3>Original Code</h3>
+									<pre><code># CODE SOURCE: SOFTWARE ARCHITECTURE WITH PYTHON 
+
+def factorial(n):
+""" Return factorial of n """
+if n == 0:
+return 1
+else:
+return n*factorial(n-1)</code></pre>
+									<h3>Updated Code</h3>
+									<pre><code># CODE SOURCE: SOFTWARE ARCHITECTURE WITH PYTHON
+import math
+
+#region variables
+n = 4
+#endregion
+
+def factorial(n):
+    """ Return factorial of n """
+    if n == 0:
+        return 1
+    else:
+        return n*factorial(n-1)
+
+print("The factorial of " + str(n) + " is : " + str(math.factorial(n)))</code></pre>
+									<h3>Results</h3>
+									<div class="box">
+										<img src="images/styleLintOutput.jpg" alt="" />
+									</div>
 									<h3 id="content">Question 2</h3>
-									<p>Can you correct each of the errors identified by pylint? The code has several issues and Pylint was used to assess the quality of the code. The follwoing outputs show the various stages of Pylint testing and remediation of the code to resolve the code issues.</p>
-									</p>
-									<h3 id="content">Original Code</h3>
-									<img src="images/pylintTestOriginal.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Pylint Output</h3>
-									<img src="images/pylintadditionaloutput.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Resolved Code</h3>
-									<img src="images/pylintTestUpdated.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Pylint Updated Output</h3>
-									<img src="images/pylintupdatedoutput.jpg" alt="" />
-									<br>
-									<hr class="major" />
+									<p>Can you correct each of the errors identified by pylint?</p>
+									<p>The code has several issues including expressions, function definitions and Pylint was used to assess the quality of the code. The following outputs show the various stages of Pylint testing and remediation of the code to resolve the code issues.</p>
+									<h3>Original Code</h3>
+									<pre><code># SOURCE OF CODE: https://docs.pylint.org/en/1.6.0/tutorial.html
+
+import string
+ 
+shift = 3
+choice = raw_input("would you like to encode or decode?")
+word = (raw_input("Please enter text"))
+letters = string.ascii_letters + string.punctuation + string.digits
+encoded = ''
+if choice == "encode":
+  for letter in word:
+    if letter == ' ':
+      encoded = encoded + ' '
+    else:
+      x = letters.index(letter) + shift
+      encoded=encoded + letters[x]
+    if choice == "decode":
+      for letter in word:
+        if letter == ' ':
+            encoded = encoded + ' '
+        else:
+          x = letters.index(letter) - shift
+          encoded = encoded + letters[x]
+
+print encoded</code></pre>
+									<h3>Pylint Results</h3>
+									<pre><code>Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 5.19.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ *
+ * Welcome to the Codio Terminal!
+ *
+ * https://docs.codio.com/develop/develop/ide/boxes/overview
+ *
+ * Your Codio Box domain is: lithiumupdate-quotamonday.codio.io
+ *
+Last login: Fri Oct 20 16:32:04 2023 from 192.168.11.51
+codio@lithiumupdate-quotamonday:~/workspace$ pylint pylintTest.py
+************* Module pylintTest
+pylintTest.py:26:13: E0001: Missing parentheses in call to 'print'. Did you mean print(encoded)? (<unknown>, line 26) (syntax-error)
+codio@lithiumupdate-quotamonday:~/workspace$</code></pre>
+									<h3>Updated Code</h3>
+										<pre><code>"""SOURCE OF CODE: https://docs.pylint.org/en/1.6.0/tutorial.html"""
+
+import string
+
+SHIFT = 3
+choice = input("would you like to encode or decode?")
+word = input("Please enter text")
+LETTERS = string.ascii_letters + string.punctuation + string.digits
+ENCODED = ''
+if choice == "encode":
+    for letter in word:
+        if letter == ' ':
+            ENCODED = ENCODED + ' '
+        else:
+            X = LETTERS.index(letter) + SHIFT
+    ENCODED = ENCODED + LETTERS[X]
+    if choice == "decode":
+        for letter in word:
+            if letter == ' ':
+                ENCODED = ENCODED + ' '
+            else:
+                X = LETTERS.index(letter) - SHIFT
+        ENCODED = ENCODED + LETTERS[X]
+
+print(ENCODED)</code></pre>
+									<h3>Updated Pylint Results</h3>
+										<pre><code>Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 5.19.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ *
+ * Welcome to the Codio Terminal!
+ *
+ * https://docs.codio.com/develop/develop/ide/boxes/overview
+ *
+ * Your Codio Box domain is: lithiumupdate-quotamonday.codio.io
+ *
+Last login: Fri Oct 20 16:35:32 2023 from 192.168.11.51
+codio@lithiumupdate-quotamonday:~/workspace$ pylint pylintnew.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+codio@lithiumupdate-quotamonday:~/workspace$</code></pre>
 									<h3 id="content">Question 3</h3>
-									<p>How does Flake differ from Pylint? The exercise was to run and use flake8 against several .py files and to assess the difference between flake and pylint. The obvious difference is that flake looks more at style errors (it will look at syntax as well) so would be better suited for identifying incorrect indentation and line spacing for example. For example on the pylint_test.py file flake8 returned an error on line 16 to indicate an error on whitespace around operators.</p>
+									<p>How does Flake differ from Pylint?</p>
+									<p>The exercise was to run and use flake8 against several .py files and to assess the difference between flake and pylint. The obvious difference is that flake looks more at style errors (it will look at syntax as well) so would be better suited for identifying incorrect indentation and line spacing for example. For example on the pylint_test.py file flake8 returned an error on line 16 to indicate an error on whitespace around operators. In the example below i am using the pylinttest.py script as previously and it is highlighting issues with whitespace.</p>
 									</p>
-									<h3 id="content">Flake Result</h3>
-									<img src="images/flake8pylinttestoutput.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Problem Code</h3>
-									<img src="images/pylinttestline16.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Fixed Code</h3>
-									<img src="images/pylinttestline16updated.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Flake8 Result 2</h3>
-									<img src="images/flake8pylinttestoutputfixed.jpg" alt="" />
-									<br>
-									<hr class="major" />
+									<h3>Example Code</h3>
+										<pre><code>"""SOURCE OF CODE: https://docs.pylint.org/en/1.6.0/tutorial.html"""
+
+import string
+
+SHIFT = 3
+choice = input("would you like to encode or decode?")
+word = input("Please enter text")
+LETTERS = string.ascii_letters + string.punctuation + string.digits
+ENCODED = ''
+if choice == "encode":
+    for letter in word:
+        if letter == ' ':
+            ENCODED = ENCODED + ' '
+        else:
+            X = LETTERS.index(letter) + SHIFT
+    ENCODED=ENCODED + LETTERS[X]
+    if choice == "decode":
+        for letter in word:
+            if letter == ' ':
+                ENCODED = ENCODED + ' '
+            else:
+                X = LETTERS.index(letter) - SHIFT
+        ENCODED = ENCODED + LETTERS[X]
+
+print(ENCODED)</code></pre>
+									<h3>Flake 8 Ouput</h3>
+										<pre><code>Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 5.19.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ *
+ * Welcome to the Codio Terminal!
+ *
+ * https://docs.codio.com/develop/develop/ide/boxes/overview
+ *
+ * Your Codio Box domain is: lithiumupdate-quotamonday.codio.io
+ *
+Last login: Fri Oct 20 16:55:02 2023 from 192.168.11.51
+codio@lithiumupdate-quotamonday:~/workspace$ flake8 pylintnew.py
+pylintnew.py:16:12: E225 missing whitespace around operator
+codio@lithiumupdate-quotamonday:~/workspace$</code></pre>
+									<h3>Flake 8 Result - Code Updated</h3>
+									<p>After resolving the whitespace in "ENCODED=ENCODED + LETTERS[X]" flake8 reported no issues with the code.</p>
+										<pre><code>Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 5.19.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ *
+ * Welcome to the Codio Terminal!
+ *
+ * https://docs.codio.com/develop/develop/ide/boxes/overview
+ *
+ * Your Codio Box domain is: lithiumupdate-quotamonday.codio.io
+ *
+Last login: Fri Oct 20 16:55:02 2023 from 192.168.11.51
+codio@lithiumupdate-quotamonday:~/workspace$ flake8 pylintnew.py
+pylintnew.py:16:12: E225 missing whitespace around operator
+codio@lithiumupdate-quotamonday:~/workspace$ flake8 pylintnew.py
+codio@lithiumupdate-quotamonday:~/workspace$</code></pre>
 									<h3 id="content">Question 4</h3>
-									<p>How does McCabe differ from other tools? The exercise was to run and use mccabe against 2 pieces of code to understand the cyclomatic complexity of each.</p>
-									</p>
-									<h3 id="content">Flake Result</h3>
-									<img src="images/flake8pylinttestoutput.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Problem Code</h3>
-									<img src="images/pylinttestline16.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Fixed Code</h3>
-									<img src="images/pylinttestline16updated.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Flake8 Result 2</h3>
-									<img src="images/flake8pylinttestoutputfixed.jpg" alt="" />
-									<br>
+									<p>How does McCabe differ from other tools?</p>
+									<p>The exercise was to run and use mccabe against 2 pieces of code to understand the cyclomatic complexity of each. The results below show an example of the code been run and mccabe been executed against each one. The scripts themselves from a code perspective have very low cyclomatic complexity. It is also worth noting that mccabe comes as a built in lbrary with flake8 so additional commands were run. The conclusion is mccabe is suefule for determining cyclomatic complexity however the scripts used in the exercise have little to no complexity therefore score low.</p>
+									<h3>Sums</h3>
+									<pre><code># SOURCE OF CODE: https://realpython.com/python-testing/
+
+def test_sum():
+    assert sum([1, 2, 3]) == 6, "Should be 6"
+
+if __name__ == "__main__":
+    test_sum()
+    print("Everything passed")</code></pre>
+									<h3>Sums2</h3>
+									<pre><code># SOURCE OF CODE: https://realpython.com/python-testing/
+
+def test_sum():
+    assert sum([1, 2, 3]) == 6, "Should be 6"
+
+def test_sum_tuple():
+    assert sum((1, 2, 2)) == 6, "Should be 6"
+
+if __name__ == "__main__":
+    test_sum()
+    test_sum_tuple()
+    print("Everything passed")</code></pre>
+									<h3>Results</h3>
+									<pre><code>Microsoft Windows [Version 10.0.19045.3448]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32>cd "c:\test python"
+
+c:\test python>python sums.py
+Everything passed
+
+c:\test python>python sums2.py
+Traceback (most recent call last):
+  File "c:\test python\sums2.py", line 12, in <module>
+    test_sum_tuple()
+  File "c:\test python\sums2.py", line 8, in test_sum_tuple
+    assert sum((1, 2, 2)) == 6, "Should be 6"
+AssertionError: Should be 6
+
+c:\test python>python -m mccabe sums.py
+4:0: 'test_sum' 1
+If 7 2
+
+c:\test python>python -m mccabe sums2.py
+4:0: 'test_sum' 1
+7:0: 'test_sum_tuple' 1
+If 10 2
+
+c:\test python></code></pre>
 									<hr class="major" />
 								<!-- Footer -->
 								<footer id="footer">

@@ -30,41 +30,257 @@
 								<section>
 									<!-- Content -->
 									<h2 id="content">Equivalence testing in Python</h2>
-									<p>The exercise was to run an existing piece of code made avaialble in an online IDE. For this purpose i decided to use the code in Visual Studio. On initial inspection of the code there were a number of issues and pylint was used to examine the code. Pylint returned several issues which i actioned as part of the exercise to make the code more favourable. Once the code was refactored pylint returned no warnings. By renaming variables, adding docstrings and other general formatting and restructuring of the code Pylint returned 0 warnings.
+									<p>The exercise was to run an existing piece of code made avaialble in an online IDE. For this purpose i decided to run Pylint and the original code in Codio but modified and updated the code in Visual Studio to be re-run in Codio. On initial inspection of the code there were a number of issues and pylint was used to examine the code. Pylint returned several issues which i actioned as part of the exercise to make the code more favourable. Once the code was refactored pylint returned no warnings. By renaming variables, adding docstrings and other general formatting and restructuring of the code Pylint returned 0 warnings.
 									<br>
 									<br>
-									Whilst I did not investigate the functionality of the code to any great length i found that there were more issues to be resolved with Pylint to rectify poor structure, naming conventions and commentary. Upon investigating the code there were some observations. Mainly the recommendation from Pylint to move the lamda expression into it's own function. This is a really good example of the efficeinecy of the Pylint tool whilst also reducing complexity by placing the expression into a reusable function.
+									Whilst I did not investigate the functionality of the code to any great length i found that there were more issues to be resolved with Pylint to rectify poor structure, naming conventions and commentary. Upon investigating the code there were some observations. Mainly the recommendation from Pylint to move the lamda expression into it's own function which was done. This is a really good example of the efficiency of the Pylint tool whilst also reducing complexity by placing the expression into a reusable function.
 									<br>
 									<br>
 									However, on intial inspection I did feel that there was unnecessary complexity in the code functions. The main one been the nesting of for loops. From a coding perspective a developer would not want to introduce to many nested for loops within a loop as it leads to confusion and overly complex code.
 									</p>
-									<h3 id="content">Pylint results</h3>
-									<img src="images/equivalence_pylint1.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Equivalence original</h3>
-									<img src="images/equivalenceoriginal.jpg" alt="" />
-									<br>
-									<br>
-									<h3 id="content">Equivalence updated</h3>
-									<img src="images/equivalenceupdated.jpg" alt="" />
-									<br>
+									<h3>Original Code</h3>
+									<pre><code># CODE SOURCE: https://stackoverflow.com/questions/38924421/is-there-a-standard-way-to-partition-an-interable-into-equivalence-classes-given/38924631#38924631
+
+def equivalence_partition(iterable, relation):
+    """Partitions a set of objects into equivalence classes
+
+    Args:
+        iterable: collection of objects to be partitioned
+        relation: equivalence relation. I.e. relation(o1,o2) evaluates to True
+            if and only if o1 and o2 are equivalent
+
+    Returns: classes, partitions
+        classes: A sequence of sets. Each one is an equivalence class
+        partitions: A dictionary mapping objects to equivalence classes
+    """
+    classes = []
+    partitions = {}
+    for o in iterable:  # for each object
+        # find the class it is in
+        found = False
+        for c in classes:
+            if relation(next(iter(c)), o):  # is it equivalent to this class?
+                c.add(o)
+                partitions[o] = c
+                found = True
+                break
+        if not found:  # it is in a new class
+            classes.append(set([o]))
+            partitions[o] = classes[-1]
+    return classes, partitions
+
+
+def equivalence_enumeration(iterable, relation):
+    """Partitions a set of objects into equivalence classes
+
+    Same as equivalence_partition() but also numbers the classes.
+
+    Args:
+        iterable: collection of objects to be partitioned
+        relation: equivalence relation. I.e. relation(o1,o2) evaluates to True
+            if and only if o1 and o2 are equivalent
+
+    Returns: classes, partitions, ids
+        classes: A sequence of sets. Each one is an equivalence class
+        partitions: A dictionary mapping objects to equivalence classes
+        ids: A dictionary mapping objects to the indices of their equivalence classes
+    """
+    classes, partitions = equivalence_partition(iterable, relation)
+    ids = {}
+    for i, c in enumerate(classes):
+        for o in c:
+            ids[o] = i
+    return classes, partitions, ids
+
+
+def check_equivalence_partition(classes, partitions, relation):
+    """Checks that a partition is consistent under the relationship"""
+    for o, c in partitions.items():
+        for _c in classes:
+            assert (o in _c) ^ (not _c is c)
+    for c1 in classes:
+        for o1 in c1:
+            for c2 in classes:
+                for o2 in c2:
+                    assert (c1 is c2) ^ (not relation(o1, o2))
+
+
+def test_equivalence_partition():
+    relation = lambda x, y: (x - y) % 4 == 0
+    classes, partitions = equivalence_partition(
+        range(-3, 5),
+        relation
+    )
+    check_equivalence_partition(classes, partitions, relation)
+    for c in classes: print(c)
+    for o, c in partitions.items(): print(o, ':', c)
+
+
+if __name__ == '__main__':
+    test_equivalence_partition()</code></pre>
+									<h3>Pylint Results</h3>
+										<pre><code>Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 5.19.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ *
+ * Welcome to the Codio Terminal!
+ *
+ * https://docs.codio.com/develop/develop/ide/boxes/overview
+ *
+ * Your Codio Box domain is: lithiumupdate-quotamonday.codio.io
+ *
+Last login: Fri Oct 20 13:51:41 2023 from 192.168.11.51
+codio@lithiumupdate-quotamonday:~/workspace$ pylint equivalence.py
+************* Module equivalence
+equivalence.py:1:0: C0301: Line too long (158/100) (line-too-long)
+equivalence.py:79:0: C0304: Final newline missing (missing-final-newline)
+equivalence.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+equivalence.py:17:8: C0103: Variable name "o" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:20:12: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:49:11: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:50:12: C0103: Variable name "o" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:57:8: C0103: Variable name "o" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:57:11: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:60:8: C0103: Variable name "c1" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:61:12: C0103: Variable name "o1" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:62:16: C0103: Variable name "c2" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:63:20: C0103: Variable name "o2" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:67:0: C0116: Missing function or method docstring (missing-function-docstring)
+equivalence.py:74:8: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:74:22: C0321: More than one statement on a single line (multiple-statements)
+equivalence.py:75:8: C0103: Variable name "o" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:75:11: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)
+equivalence.py:75:36: C0321: More than one statement on a single line (multiple-statements)
+
+-----------------------------------
+Your code has been rated at 5.37/10
+
+codio@lithiumupdate-quotamonday:~/workspace$</code></pre>
+									<h3>Updated Code</h3>
+										<pre><code>"""CODE SOURCE: https://shorturl.at/qDMP7"""
+
+def equivalence_partition(iterable, relation):
+    """Partitions a set of objects into equivalence classes
+
+    Args:
+        iterable: collection of objects to be partitioned
+        relation: equivalence relation. I.e. relation(o1,o2) evaluates to True
+            if and only if o1 and o2 are equivalent
+
+    Returns: classes, partitions
+        classes: A sequence of sets. Each one is an equivalence class
+        partitions: A dictionary mapping objects to equivalence classes
+    """
+    classes = []
+    partitions = {}
+    for obj in iterable:  # for each object
+        # find the class it is in
+        found = False
+        for cla in classes:
+            if relation(next(iter(cla)), obj):  # is it equivalent to this class?
+                cla.add(obj)
+                partitions[obj] = cla
+                found = True
+                break
+        if not found:  # it is in a new class
+            classes.append(set([obj]))
+            partitions[obj] = classes[-1]
+    return classes, partitions
+
+def equivalence_enumeration(iterable, relation):
+    """Partitions a set of objects into equivalence classes
+
+    Same as equivalence_partition() but also numbers the classes.
+
+    Args:
+        iterable: collection of objects to be partitioned
+        relation: equivalence relation. I.e. relation(o1,o2) evaluates to True
+            if and only if o1 and o2 are equivalent
+
+    Returns: classes, partitions, ids
+        classes: A sequence of sets. Each one is an equivalence class
+        partitions: A dictionary mapping objects to equivalence classes
+        ids: A dictionary mapping objects to the indices of their equivalence classes
+    """
+    classes, partitions = equivalence_partition(iterable, relation)
+    ids = {}
+    for ind, cla in enumerate(classes):
+        for obj in cla:
+            ids[obj] = ind
+    return classes, partitions, ids
+
+def check_equivalence_partition(classes, partitions, relation):
+    """Checks that a partition is consistent under the relationship"""
+    for obj, cla in partitions.items():
+        for _cla in classes:
+            assert (obj in _cla) ^ (not _cla is cla)
+    for cla1 in classes:
+        for obj1 in cla1:
+            for cla2 in classes:
+                for obj2 in cla2:
+                    assert (cla1 is cla2) ^ (not relation(obj1, obj2))
+
+def test_equivalence_partition():
+    """First function to set objects to perform checks"""
+    relation = relate()
+    classes, partitions = equivalence_partition(
+        range(-3, 5),
+        relation
+    )
+    check_equivalence_partition(classes, partitions, relation)
+    for cla in classes:
+        print(cla)
+    for obj, cla1 in partitions.items():
+        print(obj, ':', cla1)
+
+def relate():
+    """Function to be called from other functions for lambda"""
+    return lambda x, y: (x - y) % 4 == 0
+
+if __name__ == '__main__':
+    test_equivalence_partition()</code></pre>
+									<h3>Updated Pylint Results</h3>
+										<pre><code>Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 5.19.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ *
+ * Welcome to the Codio Terminal!
+ *
+ * https://docs.codio.com/develop/develop/ide/boxes/overview
+ *
+ * Your Codio Box domain is: lithiumupdate-quotamonday.codio.io
+ *
+Last login: Fri Oct 20 14:03:34 2023 from 192.168.11.51
+codio@lithiumupdate-quotamonday:~/workspace$ pylint equivalencenew.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+codio@lithiumupdate-quotamonday:~/workspace$</code></pre>
 									<hr class="major" />
 									<h2 id="content">Cyclomatic complexity relevance today</h2>
-										<p>One of the challenges of software and secure software design is the validity of code and it's inherent testing and the scale of re-usability and modularity. McCabe's Cyclomatic Complexity is often considered but does it still retain relevance today with trends such as Agile software development leading to quicker, iterative design, build and release or with the rising popularity in microservices. Cyclomatic complexity determines stability and confidence in a program by measuring the number of linear and independent paths through software.
+										<p>One of the challenges of software and secure software design is the validity of code and its inherent testing and the scale of re-usability and modularity. McCabe's Cyclomatic Complexity is often considered but is it still relevant today? With trends such as Agile software development leading to quicker, iterative design, build and release or with the rising popularity of microservices. Cyclomatic complexity determines stability and confidence in a program by measuring the number of linear and independent paths through software.
 										<br>
 										<br>
-										I consider cyclomatic complexity to have some relevance in current software design practices but given the rapid advances in programming languages, interoperability and methodologies it is perhaps not as relevant as when it was first proposed. (Shepperd 1988) debates that the high acceptance of the model by the software engineering community it is very rarely questioned. Whilst applying a rule of assessing control paths through a module it does not consider the complexity inside each path. Furthermore the assesment and review of maintenance of a new or existing solution would determine the complexity of code which may be more dependent on the organisation, resources and skills as well as the identified problem or requirements. These may determine the level of complexity required in software.
+										I consider cyclomatic complexity to have some relevance in current software design practices but given the rapid advances in programming languages, interoperability, and methodologies it is perhaps not as relevant as when it was first proposed. (Shepperd 1988) debates that the high acceptance of the model by the software engineering community it is very rarely questioned. Whilst applying a rule of assessing control paths through a module it does not consider the complexity inside each path. Furthermore, the assessment and review of maintenance of a new or existing solution would determine the complexity of code which may be more dependent on the organisation, resources, and skills as well as the identified problem or requirements. These may determine the level of complexity required in software.
 										<br>
 										<br>
-										(Gill & Kemerer 1991) discuss the complexity of existing systems whilst assuming that complex systems are harder to maintain, suffer more entropy becoming chaotic. Whilst using cyclomatic complexity as a tool to asses exisiting modules does hold some relevance it is the organisation itself that determines the repair/replace decision so dependent on the maintenance on the existing code one could argue that logical decisions are made on cost, resource, time rather than reviewing how many linear steps or paths a piece of code has taken.
+										(Gill & Kemerer 1991) discuss the complexity of existing systems whilst assuming that complex systems are harder to maintain, suffer more entropy and become chaotic. Whilst using cyclomatic complexity as a tool to asses existing modules does hold some relevance it is the organisation itself that determines the repair/replace decision so dependent on the maintenance of the existing code one could argue that logical decisions are made on cost, resource, time rather than reviewing how many linear steps or paths a piece of code has taken.
 										<br>
 										<br>
-										In summary i would still agree that elements of McCabe's cyclomatic complexity could still be applied. However, as discussed the evolution of programming languages, methodologies and libraries do significantly reduce levels of complexity. For example, delivering in an Agile method if building a new system would only deliver smaller tactical modules of code which would have limited dependency on exixting or future modules.  Libraries also offer the ability to leverage modules and functions that remove the need to write extensive code therefore making software more flexible and modular.</p>
+										In summary, I would still agree that elements of McCabe's cyclomatic complexity could still be applied. However, as discussed, the evolution of programming languages, methodologies and libraries does significantly reduce levels of complexity. For example, delivering in an Agile method if building a new system would only deliver smaller tactical modules of code which would have limited dependency on existing or future modules. Libraries also offer the ability to leverage modules and functions that remove the need to write extensive code therefore making software more flexible and modular.</p>
 										<br>
 										<p>References:
 										<br>
+										<br>
 										Shepperd, M. (1988) A critique of cyclomatic complexity as a software metric. Software Engineering Journal, 3(2): 30-36.
+										<br>
 										<br>
 										Gill, G.K. and Kemerer, C.F. (1991) Cyclomatic complexity density and software maintenance productivity. IEEE transactions on software engineering, 17(12): 1284-1288.
 										<hr class="major" />

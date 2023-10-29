@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>E-Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+								<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>E-Portfolio</strong> - Simon Bolder</a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/simon-bolder-497bb17" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</header>
+								<!-- Banner -->
+								<section>
+									<!-- Content -->
+									<h2 id="content">Discussion Topic</h2>
+										<p>Select one of the coding weaknesses which have been identified by OWASP and create a flowchart of the steps which may have led to the weakness occurring. Which UML models might you use to present the design of your proposed software, and why are they the most appropriate choice(s)?</p>
+									<h2 id="content">Learning Outcomes</h2>
+										<p>- Identify and manage security risks as part of a software development project.
+										<br>
+										- Critically analyse development problems and determine appropriate methodologies, tools and techniques (including program design and development) to solve them.</p>
+									<hr class="major" />
+									<h2 id="content">Unit 1 - Collaborative Discussion 1 - Initial Post</h2>
+										<p>The OWASP coding weakness I have focussed on in my discussion is A09:2021-Security Logging and Monitoring Failures. I have represented the flow of a sample registration using an activity diagram as a high-level process flow. The activity diagram highlights the steps that would be executed in a laboratory for logging and testing a sample as well as sending results. By only logging the select events of authentication and logging in a sample it fails to identify all the logging or monitoring that would be required through the process which would be recognised as a weakness and broken. With the sensitivity and criticality of the process and data, it should be assumed that security logging and monitoring would take place across all steps. By being able to complete the sample after authentication the software bypasses authorisation and emailing sample data is also not logged so the software misses crucial auditing and system logs/monitoring.
+										<br>
+										<br>
+										In addition to an activity diagram use case diagrams would be an appropriate choice to successfully represent the actors required for consuming and actioning logging and monitoring events that are captured through the software. Furthermore, a sequence diagram would support the messages and their states through the software transaction process. The activity diagram could maintain the process flow and the supporting diagrams would surface the objects and states to log and monitor.
+										<h3>Diagram</h3>
+										<div class="box">
+										<img src="images/SSD Unit1 Collab UML small.jpg" alt="" />
+										</div>
+										References: 
+										<br>
+										<br>
+										OWASP. (2023) OWASP Top Ten. Available from: https://owasp.org/www-project-top-ten/ [Accessed 10 August 2023].</p>
+									<hr class="major" />
+									<h2 id="content">Unit 2 - Collaborative Discussion 1 - Responses</h2>
+									<h3 id="content">Peer #1 response to my initial post</h3>
+										<p>Thanks for your post.
+										<br>
+										<br>
+										I enjoyed reading your post regarding a new OWASP weakness I have not yet illustrated a diagram for. I appreciated your inclusion of the ‘Log’ behaviour in your activity diagram and explanation of how the absence of logging at different steps of the activity process, as it relates to the system, would be a weakness leading to compromise of the system. Although, I would argue what is the efficiency in logging every single activity of the system at every step? I suggest that perhaps logging crucial intersections which are not bypassable would be more efficient as it relates to logging information and more efficient as it relates to providing auditors and monitors with usable and meaningful data.
+										<br>
+										<br>
+										I agree with your discussion that a use case diagram would be meaningful by illustrating how actors interact with the system and are prone to or affected by the logging actions performed by the system. Although, I believe that the activity diagram you have presented delivers a more meaningful illustration versus a sequence diagram. This is because the most important focus of the diagram is the logging and the noise of a sequence diagram would take away meaning from logging represented in the diagram. Furthermore, to this notion the current activity diagram you have presented may benefit from highlighting the ‘Log’ steps.
+										<br>
+										<br>
+										References:
+										<br>
+										<br>
+										Common Weakness Enumeration (2017) CWE View: Weaknesses in OWASP Top Ten. Available: https://cwe.mitre.org/data/definitions/1026.html.
+										<br>
+										<br>
+										OWASP. (2023) OWASP Top Ten. Available from: https://owasp.org/www-project-top-ten/ [accessed 14 August 2023].
+										<br>
+										<br>
+										Rumbaugh, J., Jacobson, I. & Booch, G. (1999) 'The Unified Modeling Language Reference Manual', Addison Wesley Longman, Inc.</p>
+									<h2 id="content">Unit 2 - Collaborative Discussion 1 - My response to Peer #1</h2>
+									<h3 id="content">Peer #1 post</h3>
+										<p>The OWASP coding weakness I have focussed on in my discussion and represented using a UML flowchart is, broken access control. I have utilised a use case diagram to represent broken access control because this OWASP weakness is defined as an instance of a malicious user story in which a user (attacker) is acting outside their intended permissions and hence, mimicking administration to assume their controls. Therefore, because a use case diagram captures the way in which users of software interact and benefit from it, modelling broken access control is most appropriate using a use case diagram.
+										<br>
+										<br>
+										Although, modelling broken access control using activity UML diagrams would also be appropriate because these UML models show the way in which events are executed within a system over time. Because broken access control requires an attacker to manipulate authorised access and this involves malicious behaviour/activities, an activity UML model will successfully present in-depth detail of the process.
+										<br>
+										<br>
+										Furthermore, a sequence UML diagram has the potential to be a successful representation of broken access control. This is because it would represent how messages are distributed between objects and how an attacker could take advantage. Although, a sequence UML diagram would be the least ideal UML model to utilise because only the messages between objects involved in authenticating a user would be useful to represent. Beyond this, the attacker has already gained access/control and in a position to enact malicious intent.
+										<h3>Diagram</h3>
+										<div class="box">
+										<img src="images/disc1_peer1diagram.png" alt="" />
+										</div>
+										References:
+										<br>
+										<br>
+										Common Weakness Enumeration (2017) CWE View: Weaknesses in OWASP Top Ten. Available: https://cwe.mitre.org/data/definitions/1026.html.
+										<br>
+										<br>
+										Rumbaugh, J., Jacobson, I. & Booch, G. (1999) 'The Unified Modeling Language Reference Manual', Addison Wesley Longman, Inc.</p>
+									<h3 id="content">Peer #1 post - My response</h3>
+										<p>Reading your post and the use of a use case diagram to represent broken access control was interesting. You captured some significant steps and through use of the use case you were able to identify a key actor in the form of an attacker and more specifically the attack of confidential payroll information. My main observation with the use case is that by using an activity diagram you would be able to elicit more granularity around some of the user interactions/sequences and provide a bit more detail on the steps of how the process would run to perhaps identify more closely the points of weakness.
+										<br>
+										<br>
+										Furthermore, I agree with your points on the use of a sequence diagram. Mainly the representation of object interactions and transactions would be better represented for the low-level detail. However, I believe you could also provide more clarity with an activity diagram as well as both offer the ability to present the sequence.
+										<br>
+										<br>
+										I think the key thing here is there are opportunities to utilise different diagrams for any of the OWASP top 10 weaknesses. Some would be more sequential, supporting activity diagrams; some would be better represented using use case or sequence diagrams. And if also applying OOP patterns to a software solution you could in fact use all of them.
+										<br>
+										<br>
+										References:
+										<br>
+										<br>
+										OWASP. (2023) OWASP Top Ten. Available from: https://owasp.org/www-project-top-ten/ [Accessed 10 August 2023]
+										<br>
+										<br>
+										Rumbaugh, J., Jacobson, I. & Booch, G. (1999) 'The Unified Modeling Language Reference Manual', Addison Wesley Longman, Inc.</p>
+									<h2 id="content">Unit 2 - Collaborative Discussion 1 - My response to Peer #2</h2>
+									<h3 id="content">Peer #2 post</h3>
+										<p>I used an activity diagram to illustrate the steps that may lead to the Broken Access Control weakness (OWASP, 2023) as they help to visualise the sequence of steps involved within a process in a more explicit manner - in this case, how the different actions, activities and decisions lead up to the vulnerability occurrence. An activity diagram is useful to show the dynamic nature of a system (“how” something happens) rather than “what” it does. Other diagrams such as Sequence diagrams and State Machine diagrams are also appropriate due to their representation of dynamic behaviour between the different objects (or states).
+										<br>
+										<br>
+										While a use case diagram may be useful to display the interactions between various actors and the system, and a class diagram might be helpful to represent the overall structure of classes and their relationship in a system, both lack the effectiveness of showing the dynamic sequence of events that lead up to a security vulnerability like Broken Access Control.
+										<h3>Diagram</h3>
+										<div class="box">
+										<img src="images/disc1_peer2diagram.png" alt="" />
+										</div>
+										References:
+										<br>
+										<br>
+										OWASP. (2023) OWASP Top Ten. Available from: https://owasp.org/www-project-top-ten/ [Accessed 10 August 2023]
+										<br>
+										<br>
+										Pillai, A. B. (2017) Software Architecture with Python. Birmingham, UK. Packt Publishing Ltd.</p>
+									<h3 id="content">Peer #2 post - My response</h3>
+										<p>I agree on your use of an activity diagram and it's representation of broken access control in the software. The notation is clear in helping to identify and simplify the decision points and sequence. Additionally it would have been useful to include how the user has attempted authentication would elaborate on the method they have used.
+										<br>
+										<br>
+										In regards to your recommendations of sequence and state machine diagrams these would both be useful and would support the varying levels of the software design. Combined with the activity diagram these would illustrate varying levels of detail base on the specific layers of the solution.
+										<br>
+										<br>
+										I do however disagree on the use of use case diagram. This would be really helpful in defining the actors and how they interact or consume objects or functions of the software at the highest level in architecting a solution. I do agree though that a class diagram in this case would not effectively show any representation of sequence or interaction from a user/actor perspective.
+										<br>
+										<br>
+										References:
+										<br>
+										<br>
+										OWASP. (2023) OWASP Top Ten. Available from: https://owasp.org/www-project-top-ten/ [Accessed 10 August 2023]
+										<br>
+										<br>
+										Rumbaugh, J., Jacobson, I. & Booch, G. (1999) 'The Unified Modeling Language Reference Manual', Addison Wesley Longman, Inc.</p>
+									<hr class="major" />
+										<h2 id="content">Unit 3 - Collaborative Discussion 1 - Summary Post</h2>
+										<p>After reviewing responses and feedback from peers and reviewing my initial post I have made revisions and updates to my original thoughts and ideas and to further clarify my original post.
+										<br>
+										<br>
+										As there is no specific academic literature on the process of logging in a patient sample my original post was based on professional experience and the process I defined was from a very high-level brief so it is an interpretation or abstraction of many potential sequences.
+										<br>
+										<br>
+										As a Solution Architect for LIMS (Laboratory Information Management Systems) software I have been immersed in the UK's COVID diagnostic testing response over the past 2-3 years as well as implementations for WADA (World Anti-Doping Agency). What was a common factor was the capture of logs for auditing, trending, and regulatory practices. When dealing with patient samples while we do have to consider GDPR and PID (Personal Identifiable Data) we also need to consider who has interacted with or processed that data and often as mentioned for regulatory and accreditation purposes. My original post while using an activity diagram was very simplistic and whilst attempting to illustrate the points at where logging and monitoring would be broken it did not elaborate far enough on what the logs or monitoring would be.
+										<br>
+										<br>
+										Based on feedback I restructured my activity diagram into 3 individual processes to reflect the sequence for specific actors. By doing this we can identify the specific steps and sequences for an actor. An argument could be made to also use case diagrams per actor but an activity diagram still remains relevant to document the process. For example, in the new diagrams, the login process is logged for all actors however for the lab technician diagram we are not logging for entering results. This would be a critical step in the lifecycle of a patient sample as we would need to record who it was, what the result value was, and when the result was entered, and these would typically be recorded or logged. Similarly, email notifications or emailing results would be logged not only from a system perspective that emails had been sent and what was in the email but would also support monitoring of system tasks such as what email service was used and how was it authenticated against if using SFTP. By having steps to authorise a sample we are not only logging and monitoring RBAC (Role Based Access Control - which is assumed in the diagrams) but also acknowledging that the sample result has been authorised to be sent back to a patient. By tracking such events this can often be referred to as chain of custody. Prayudi & Sn (2015) discuss the aspects of physical as well as digital forensics. While this can often be associated more specifically with forensic science and the 'audit' of a sample in a criminal case the term chain of custody is often referred to in most laboratory practices so is a useful reference when discussing the digital trail involved in a patient sample and is often a consideration of most Quality Control or Assurance departments and specialists in scientific organisations.
+										<h3>Diagram</h3>
+										<div class="box">
+										<img src="images/SSD Unit1 Collab UML Updated.jpg" alt="" />
+										</div>
+										References:
+										<br>
+										<br>
+										OWASP. (2023) OWASP Top Ten. Available from: https://owasp.org/www-project-top-ten/ [accessed 14 August 2023].
+										<br>
+										<br>
+										Rumbaugh, J., Jacobson, I. & Booch, G. (1999) 'The Unified Modelling Language Reference Manual', Addison Wesley Longman, Inc.
+										<br>
+										<br>
+										Prayudi, Y. & Sn, A. (2015) Digital chain of custody: State of the art. International Journal of Computer Applications, 114(5).</p>
+								<hr class="major" />
+								
+								<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

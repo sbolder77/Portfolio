@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>E-Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+								<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>E-Portfolio</strong> - Simon Bolder</a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/simon-bolder-497bb17" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</header>
+								
+								<!-- Banner -->
+								<section>
+									<!-- Content -->
+									<h2 id="content">Cryptography</h2>
+									<p>The exercise was to create a python program using a cryptography algorithim to encrypt and decrypt a text file.
+									</p>
+									<h3 id="content">Question 1</h3>
+									<p>Why did you select the algorithm you chose? I chose to implement this code using the Fernet python library and using symmetric encryption on top of an AES algorithim. For the purposes of the code the use of symmetric encryption proved to be a more practical way of encryption by utilising the same key for both encryption and decryption. The choice however of using AES encryption was based on its inclusion in the ISO/IEC 18033-3 standard. Additionally it is the only public accessible cipher approved by the U.S. National Security Agency (NSA).</p>
+									<h3 id="content">Question 2</h3>
+									<p>Would it meet the GDPR regulations? Depndent on which GDPR model you are using (UK, EU or indeed other global data protection standards) it appears that the algorithim does meet GDPR regulations. The Data Protection Act 2018 and the General Data Protection Regulation (GDPR) states that information must is used fairly, lawfully and transparently. With the correct development the use of the Fernet cryptography and the full encryption of file and contents meets this. While not dealing with specific pieces of data in the file but encrypting the whole file there is less risk of other Personal Identifiable Data (PID) within the file been exposed. Full data could be encrypted at rest and only decrypted for the purposes of read or write transactions by back end code. There are other standards, algorithims and ciphers avaialable that organisations would prefer to use from a security perspective. There is a dependency here on risk, cost, human factors and the criticality of data when developing software and the data protection principles to be applied.</p>
+									<p>Source Code</p>
+									<img src="images/cryptocode.jpg" alt="" />
+									<br>
+									<br>
+									<p>Decrypted File</p>
+									<img src="images/cryptocodedecrypted.jpg" alt="" />
+									<br>
+									<br>
+									<p>Encrypted File</p>
+									<img src="images/cryptocodeencrypted.jpg" alt="" />
+									<br>
+									<br>
+									<p>References:
+									<br>
+									Junestam, A. and Guigo, N. (2014) Open Crypto Audit Project TrueCrypt.
+									<br>
+									Cryptography with Python. Available from: https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_quick_guide.htm [Accessed 30 September 2023].
+									<br>
+									How to Encrypt and Decrypt Files in Python. Available from: https://thepythoncode.com/article/encrypt-decrypt-files-symmetric-python?utm_content=cmp-true [Accessed 30 September 2023].
+									<hr class="major" />
+								
+								<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

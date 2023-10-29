@@ -25,78 +25,246 @@
 										<li><a href="https://www.linkedin.com/in/simon-bolder-497bb17" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 									</ul>
 								</header>
-								
 								<!-- Banner -->
 								<section>
 									
 									<!-- Content -->
 										<h2 id="content">What is a Secure Programming Language?</h2>
-										<p>We were asked to answer a series of questions related to Python and secure programming languages and then share with the team for discussion.</p>
+										<p>We were asked to answer a series of questions related to Python and secure programming languages and then share them with the team for discussion.</p>
 										<br>
 										<h3 id="content">Question 1</h3>
 										<p>What factors determine whether a programming language is secure or not?</p>
-										<p>There are several factors to consider to determine the secure nature of a programming language as well as taking into account known vulnerabilities. Cifuentes & Bierman (2019) discuss the three categories of vulnerability - buffers, injections and information leak. In addition to this considerations must be made to the number of vulnerabilities in the CWE (Common Weakness Enumneration) list. One must also consider the robustness and resiliency of a programming language. In addition considerations should be made to the libraries used by a programming language and can they or cannot be used to secure methods such as authentication, encryption and it's interaction with and transaction of data.</p>
+										<p>There are several factors to consider when determining the secure nature of a programming language as well as considering known vulnerabilities. Cifuentes & Bierman (2019) discuss the three categories of vulnerability - buffers, injections, and information leaks. In addition to these considerations must be made to the number of vulnerabilities in the CWE (Common Weakness Enumeration) list. One must also consider the robustness and resiliency of a programming language. In addition, considerations should be made to the libraries used by a programming language and whether they can or cannot be used to secure methods such as authentication, encryption, and its interaction with and transaction of data.</p>
 										<h3 id="content">Question 2</h3>
 										<p>Could Python be classed as a secure language?</p>
-										<p>As with many programming languages a number of factors should be taken into consideration. Python as a language does have the ability and libraries to perform secure coding practices but it is very dependent on the quality of code and the skill and experience of the developer. If a developer is inexperienced then regardless of what you program software to do then carelessness will introduce vulnerabilities. Similarly to using open source libraries without care and consideration to the authors and contributors to those libraries. A skilled developer would use experience and knowledge to write logical and well structured code. khoirim (2020. Discuss many uses, advantages and disadvantages of Python. Whilst the points on advantages and disadvantages do not clearly call out if Python is a suitable langauge for secure programming the points raised do indicate it has limitations. However, dependent on the use of Python for specific tasks would point to Python having enough secure abilities. An assessment could be made at the point of design or analysis to use Python for tactile development of a specific solution and the use of it's libraries as well as the abilities of the developers to make it secure.</p>
+										<p>As with many programming languages, several factors should be taken into consideration. Python as a language does have the ability and libraries to perform secure coding practices but it is very dependent on the quality of code and the skill and experience of the developer. If a developer is inexperienced then regardless of what you program software to do, then carelessness will introduce vulnerabilities. Similarly, to using open source libraries without care and consideration to the authors and contributors to those libraries. A skilled developer would use experience and knowledge to write logical and well-structured code. khoirim (2020. Discuss many uses, advantages and disadvantages of Python. Whilst the points on advantages and disadvantages do not clearly call out if Python is a suitable language for secure programming the points raised do indicate it has limitations. However, dependent on the use of Python for specific tasks would point to Python having enough secure abilities. An assessment could be made at the point of design or analysis to use Python for the tactile development of a specific solution and the use of its libraries as well as the abilities of the developers to make it secure.</p>
 										<h3 id="content">Question 3</h3>
 										<p>Python would be a better language to create operating systems than C?</p>
-										<p>Given the points discussed and limited knowledge on C my initial thoughts would be that Python would not be a suitable or more appropriate language to create operating systems. Whilst Python has many advantages in regards to simplicity it has disadvantages. Khoirim, Sonia, Laikhuram, Laishram & Singh (2020) highlight facts including the simplicity of the language, it's limitation to 'one thread at a time' and limitations in database access as well as it's limitations on memory comprehensive work. Considering Python as more of an interpreted language suitable to the application layer it perhaps would not be suitable for high performance, multi threaded and memory intensive computing tasks.</p>
+										<p>Given the points discussed and limited knowledge on C my initial thoughts would be that Python would not be a suitable or more appropriate language to create operating systems. Whilst Python has many advantages regarding simplicity it has disadvantages. Khoirim, Sonia, Laikhuram, Laishram & Singh (2020) highlight facts including the simplicity of the language, its limitation to 'one thread at a time' and limitations in database access as well as its limitations on memory comprehensive work. Considering Python as more of an interpreted language suitable to the application layer it perhaps would not be suitable for high-performance, multi-threaded and memory intensive computing tasks.</p>
 										<br>
 										<p>References:
 										<br>
-										The top programming languages for cyber security.  Written by RSI Security February 7, 2023 Available from https://blog.rsisecurity.com/the-top-programming-languages-for-cyber-security/#:~:text=Defining%20which%20programming%20language%20is,Weakness%20Enumeration%20(CWE)%20list [Accessed on 26/08/2023]
+										<br>
+										The top programming languages for cyber security.  Written by RSI Security February 7, 2023 Available from https://blog.rsisecurity.com/the-top-programming-languages-for-cyber-security/#:~:text=Defining%20which%20programming%20language%20is,Weakness%20Enumeration%20(CWE)%20list [Accessed on 26 August 2023]
+										<br>
 										<br>
 										Cifuentes, C. & Bierman, G. (2019) What is a secure programming language?. In 3rd Summit on Advances in Programming Languages (SNAPL 2019). Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik.
 										<br>
+										<br>
 										Khoirom, S., Sonia, M., Laikhuram, B., Laishram, J. AND Singh, T.D. (2020). Comparative analysis of Python and Java for beginners. Int. Res. J. Eng. Technol, 7(8): 4384-4407.</p>
-
-									<hr class="major" />
-										
+										<hr class="major" />
 										<h2 id="content">Buffers in C</h2>
-										<p>The exercise was run in the codio platform and was a simple program to create a buffer, enter values and return messages back to the console. To execute and test the code we were asked to enter simple strings (name). Once with 8 characters (within buffer limit) and 10 characters to exceed the buffer limit and to record the results.</p>
+										<p>The exercise was run in the Codio platform and was a simple program to create a buffer, enter values and return messages back to the console. To execute and test the code we were asked to enter simple strings (name). Once with 8 characters (within buffer limit) and 10 characters to exceed the buffer limit and to record the results.</p>
 										<h3 id="content">Question 1</h3>
-										<p>What happens when the string is entered within the buffer limit (8)? The string is returned to the terminal. When the string entered is greater in length than the buffer limit the terminal command exits.</p>
+										<p>What happens when the string is entered within the buffer limit (8)?</p>
+										<p>The string is returned to the terminal. When the string entered is greater in length than the buffer limits the terminal command exits.</p>
 										<h3 id="content">Question 2</h3>
-										<p>What does the output message mean? That the buffer length has been exceeded and as such the session terminates and dumps any of the data in the buffer.</p>
-										<img src="images/bufferoverflowc.jpg" alt="" />
-										<br>
-										<img src="images/bufferoverflowcterminal.jpg" alt="" />
-										<!-- Break -->
-										<br>
-										<br>
+										<p>What does the output message mean?</p>
+										<p>That the buffer length has been exceeded and as such the session terminates and dumps any of the data in the buffer.</p>
+										<h3>Code</h3>
+										<pre><code>#include <stdio.h>
+
+int main(int argc, char **argv)
+{
+    char buf[8];             // buffer for eight characters
+    printf("Enter name: ");
+    gets(buf);               // read from stdio (sensitive function!)
+    printf("%s\n", buf);     // print out data stored in buf
+    return 0;                // 0 as return value
+};</code></pre>
+										<h3>Results</h3>
+										<pre><code>Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 5.19.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ *
+ * Welcome to the Codio Terminal!
+ *
+ * https://docs.codio.com/develop/develop/ide/boxes/overview
+ *
+ * Your Codio Box domain is: placedetect-monsterfortune.codio.io
+ *
+Last login: Fri Oct 20 13:05:24 2023 from 192.168.11.51
+codio@placedetect-monsterfortune:~/workspace$ ./bufoverflow
+Enter name: simon
+simon
+codio@placedetect-monsterfortune:~/workspace$ ./bufoverflow
+Enter name: simonbolder
+simonbolder
+*** stack smashing detected ***: <unknown> terminated
+Aborted (core dumped)
+codio@placedetect-monsterfortune:~/workspace$</code></pre>
+										<hr class="major" />
 										<h2 id="content">Buffers in Python</h2>
-										<p>The exercise was was to simulate similar buffer functionality in Python to asses the results and how the 2 languages interpret buffer responses. It utilised pylint to evaluate the output.</p>
+										<p>The exercise was to simulate similar buffer functionality in Python to assess the results and how the 2 languages interpret buffer responses. It utilised Pylint to evaluate the output.</p>
 										<h3 id="content">Question 1</h3>
-										<p>What happens? Firstly from a purely technical point of view the exercise was to run a .py file that did not match the name of the file. By entering the file name with the wrong case in the terminal window it fails because of a mismatch in naming. Secondly when run with correct casing the .py file runs but fails because of an out of range index in the buffer.</p>
+										<p>What happens?</p>
+										<p>The code runs but fails because of an out-of-range index in the buffer.</p>
+										<h3>Original Code</h3>
+										<pre><code>buffer=[None]*10 
+
+for i in range (0,11): 
+
+    buffer[i]=7 
+
+print(buffer) 
+};</code></pre>
+										<h3>Result</h3>
+										<pre><code>Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 5.19.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ *
+ * Welcome to the Codio Terminal!
+ *
+ * https://docs.codio.com/develop/develop/ide/boxes/overview
+ *
+ * Your Codio Box domain is: orangedoctor-expandzipper.codio.io
+ *
+Last login: Fri Oct 20 13:16:59 2023 from 192.168.11.51
+codio@orangedoctor-expandzipper:~/workspace$ python3 Overflow.py
+Traceback (most recent call last):
+  File "Overflow.py", line 3, in <module>
+    buffer[i]=7
+IndexError: list assignment index out of range
+codio@orangedoctor-expandzipper:~/workspace$</code></pre>
 										<h3 id="content">Question 2</h3>
-										<p>What does the output message mean and can you fix it? While pylint runs it is really evaluating the structure of the code and assesses casing, comment strings and quality of code rather than encapsulating or alerting to the potential error. What has occured is the buffer variable assigns itself an array of 10 with No integer values for the index objects. When the for loop executes with a range of 0 - 11 it is comparing the buffer value which only has 10 objects so will fail on the final loop regardless of checking the index value to 7. The index value does equal 7 once in the loop and there is no output on this and the loop continues.</p>
-										<img src="images/bufferoverflowpython.jpg" alt="" />
-										<br>
-										<img src="images/bufferoverflowpython1.jpg" alt="" />
-									<hr class="major" />
-									<!-- Content -->
+										<p>What does the output message mean and can you fix it?</p>
+										<p>We were instructed to use pylint to analyse the code. While Pylint picks up on conventions like naming, indentation, docstrings in the script it does not give any indication on how to fix the issue. The error occurs due to the fact the buffer value is set to a maximum of 10 where as the for loop checking a range is upt to a length of 11. The buffer variable inside the for loop and the index it looks for from a range of 0 - 11 will fail as the buffer is set to 10. By adjusting the range in the for loop to (0, 10) fixes the error as the range is the same length as the buffer.</p>
+										<h3>Pylint Result</h3>
+										<pre><code>Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 5.19.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ *
+ * Welcome to the Codio Terminal!
+ *
+ * https://docs.codio.com/develop/develop/ide/boxes/overview
+ *
+ * Your Codio Box domain is: orangedoctor-expandzipper.codio.io
+ *
+Last login: Fri Oct 20 13:37:03 2023 from 192.168.11.51
+codio@orangedoctor-expandzipper:~/workspace$ pylint Overflow.py
+************* Module Overflow
+Overflow.py:4:0: C0303: Trailing whitespace (trailing-whitespace)
+Overflow.py:5:0: C0304: Final newline missing (missing-final-newline)
+Overflow.py:1:0: C0103: Module name "Overflow" doesn't conform to snake_case naming style (invalid-name)
+Overflow.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 0.00/10 (previous run: 0.00/10, +0.00)
+
+codio@orangedoctor-expandzipper:~/workspace$</code></pre>
+										<h3>Updated Code</h3>
+										<pre><code>'''Prints the buffer contents'''
+buffer=[None]*10
+for i in range(0,10):
+    buffer[i]=7
+print(buffer)</code></pre>
+										<h3>Pylint updates</h3>
+										<pre><code>Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 5.19.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ *
+ * Welcome to the Codio Terminal!
+ *
+ * https://docs.codio.com/develop/develop/ide/boxes/overview
+ *
+ * Your Codio Box domain is: orangedoctor-expandzipper.codio.io
+ *
+Last login: Fri Oct 20 13:37:36 2023 from 192.168.11.51
+codio@orangedoctor-expandzipper:~/workspace$ pylint overflow.py
+
+------------------------------------
+Your code has been rated at 10.00/10
+
+codio@orangedoctor-expandzipper:~/workspace$</code></pre>
+										<h3>Results</h3>
+										<pre><code>Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 5.19.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ *
+ * Welcome to the Codio Terminal!
+ *
+ * https://docs.codio.com/develop/develop/ide/boxes/overview
+ *
+ * Your Codio Box domain is: orangedoctor-expandzipper.codio.io
+ *
+Last login: Fri Oct 20 13:41:19 2023 from 192.168.11.51
+codio@orangedoctor-expandzipper:~/workspace$ python overflow.py
+[7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+codio@orangedoctor-expandzipper:~/workspace$</code></pre>
+										<hr class="major" />
+										<!-- Content -->
 										<h2 id="content">Producer Consumer</h2>
-										<p>The exercise was run in the codio environment. By having a prepared script the code could be executed to output a result. While the exercise was simplistic in it's nature to describe the use of queues and threads there were elements that could be improved.</p>
+										<p>The exercise was run in the Codio environment. By having a prepared script, the code could be executed to output a result. While the exercise was simplistic in its nature to describe the use of queues and threads there were elements that could be improved.</p>
 										<h3 id="content">Question 1</h3>
-										<p>How is the queue data structure used to achieve the purpose of the code? It supplies a linear data structure similar to a stack. As it stores items sequentially the consumer can then take the next item in the queue.</p>
+										<p>How is the queue data structure used to achieve the purpose of the code?</p>
+										<p>It supplies a linear data structure like a stack. As it stores items sequentially the consumer can then take the next item in the queue.</p>
 										<h3 id="content">Question 2</h3>
-										<p>What is the purpose of q.put(I)? q.put[i] will add an element to the queue as well as block if a queue has reached it maximum capacity.</p>
+										<p>What is the purpose of q.put(I)?</p>
+										<p>q.put[i] will add an element to the queue as well as a block if a queue has reached its maximum capacity.</p>
 										<h3 id="content">Question 3</h3>
-										<p>What is achieved by q.get()? q.get() will remove and return an item from the queue.</p>
+										<p>What is achieved by q.get()?</p>
+										<p>q.get() will remove and return an item from the queue.</p>
 										<h3 id="content">Question 4</h3>
-										<p>What functionality is provided by q.join()? q.join() will block the threads until the consumers have processed the elements of the queue.</p>
+										<p>What functionality is provided by q.join()?</p>
+										<p>q.join() will block the threads until the consumers have processed the elements of the queue.</p>
 										<h3 id="content">Question 5</h3>
-										<p>What technique(s) would be appropriate to secure the code? While not extending the code in this exercise there are several options to securing producer-consumer code. (Brownlee 2022) discusses the use of a signal shutdown where a sentinel object could be placed into the buffer by a producer acting as a clear message to consumers. This could prevent rogue input into a buffer potetnially adding more elements. Other methods could be the use of maxsize parameters to to limit the size of a queue. By setting this and adding logic in your code that controls how many elements are added to the queue you could restrict the risk of incorrectly sized queue or making it infinite leading to overflow or corruption of data.</p>
-										<img src="images/producerconsumercode.jpg" alt="" />
-										<br>
+										<p>What technique(s) would be appropriate to secure the code?</p>
+										<p>While not extending the code in this exercise there are several options to securing producer-consumer code. (Brownlee 2022) discusses the use of a signal shutdown where a sentinel object could be placed into the buffer by a producer acting as a clear message to consumers. This could prevent rogue input into a buffer potentially adding more elements. Other methods could be the use of max size parameters to limit the size of a queue. By setting this and adding logic in your code that controls how many elements are added to the queue you could restrict the risk of the incorrectly sized queue or making it infinite leading to overflow or corruption of data.</p>
+										<h3>Code</h3>
+										<pre><code>'''code source: https://techmonger.github.io/55/producer-consumer-python/ - 
+Module provising producer consumer printing function'''
+
+from threading import Thread
+from queue import Queue
+
+q = Queue()
+final_results = []
+
+'''Function to calcualte the producer consumer threads'''
+def producer():
+    for P in range(100):
+        q.put(P)        
+
+def consumer():
+    while True:
+        number = q.get()
+        result = (number, number**2)
+        final_results.append(result)
+        q.task_done()
+
+for i in range(5):
+    t = Thread(target=consumer)
+    t.daemon = True
+    t.start()
+
+producer()
+q.join()
+print (final_results)</code></pre>
+										<h3>Diagram</h3>
+										<div class="box">
 										<img src="images/producerconsumeroutput.jpg" alt="" />
+										</div>
 										<br>
 										References: 
 										<br>
-										<p>Brownlee, J. (2022) Thread Producer-Consumer Pattern in Python Available from: https://superfastpython.com/thread-producer-consumer-pattern-in-python/ [Accessed 26/8/23].</p>
-									<hr class="major" />
-								
+										<br>
+										<p>Brownlee, J. (2022) Thread Producer-Consumer Pattern in Python Available from: https://superfastpython.com/thread-producer-consumer-pattern-in-python/ [Accessed 26 August 2023].</p>
+								<hr class="major" />
 								<!-- Footer -->
 								<footer id="footer">
 									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
